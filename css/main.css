@@ -16,6 +16,9 @@ html {
     line-height: 1.4;
 }
 
+[data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
+
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
