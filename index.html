@@ -11,6 +11,7 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
+	
 
 <div data-role="page" id="home">
 	
@@ -24,6 +25,7 @@
         </ul>
 	    <!-- panel content goes here -->
 	</div><!-- /panel -->
+
 
 	<div data-role="navbar">
 		<ul>
@@ -54,7 +56,23 @@
 		<ul>
 			<li> <a href="#" data-icon="search"></a></li>
 			<li> <a href="#home" data-icon="home"></a></li>
-			<li> <a href="#" data-icon="edit"></a></li>
+			<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
+			<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+			    <form>
+			        <div style="padding:10px 20px;">
+			            <h3>What do you need help with?</h3>
+			            <label for="un" class="ui-hidden-accessible">Username:</label>
+			            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+			            <label for="textarea-1"></label>
+    					<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+			            
+			            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+			        </div>
+			    </form>
+			</div>
+		</li>
+
+
 		</ul>
 		</div>
 	</div><!-- /footer -->
@@ -100,7 +118,11 @@
 	</div><!-- /footer -->
 </div>
 
+<<<<<<< HEAD
+<div data-role="page" id="post">
+=======
 
+>>>>>>> bce32521913eeef5c82d5ccad6c2a675c7e90945
 
 
 </body>
