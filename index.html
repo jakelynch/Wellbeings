@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="home">
+	<div data-role="header">
+		<h1>TESTING</h1>
+		<div data-role ="navbar">
+			<ul>
+				<li>
+					<a href= "#home" class="ui-btn"> Home (local link)</a> </li>
+				<li> <a href= "#contacts" data-icon="gear" class="ui-btn"> Contacts (local link)</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div data-role ="content">
+		<p>Page content goes here.</p>
+		<div>Here
+		<ul data-role='listview' data-inset = 'True'>             
+			<li><a href="http://acura.com"> Acura </a></li>
+			<li><a href="http://audi.com">Audi</a></li>
+			<li><a href="http://bmw.com">BMW</a></li>
+		</ul>
+		</div>
+		<div data-role="page" id="contacts"></div>
+		<div data-role="page" id="home"></div>
+		<br />
+		<a href="http://google.com">Google</a>
+		<button>Button</button>
+	</div><!-- /content -->
+
+	<div data-role ="footer">
+		<h4>Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="contacts">
+	<div data-role="header">
+		<h1>TESTING</h1>
+	</div>
+
+
+	<div data-role ="content">
+		<p>Page content goes here.</p>
+		<div data-role ="navbar">
+			<ul>
+				<li>
+					<a href= "#home" class="ui-btn"> Home (local link)</a> </li>
+				<li> <a href= "#contacts" class="ui-btn"> Contacts (local link)</a>
+				</li>
+			</ul>
+		</div>
+		<div>Here
+		<ul data-role='listview' data-inset = 'True'>             
+			<li>Joe</a></li>
+			<li>Jack</li>
+			<li>Jeff</li>
+		</ul>
+		</div>
+		<br />
+		<a href="http://google.com">Google</a>
+		<button>Button</button>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div><!-- /footer -->
+</div>
+
+</body>
+</html>
