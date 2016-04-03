@@ -27,8 +27,8 @@
 
 	<div data-role="navbar">
 		<ul>
-			<li> <a href="#" data-icon="carat-l"></a></li>
-			<li> <a href="#" data-icon="user"></a></li>
+			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
+			<li> <a href="#profile" data-icon="user"></a></li>
 			<li> <a href="#mypanel" data-icon="bars"></a></li>
 		</ul>
 	</div>
@@ -53,45 +53,50 @@
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="search"></a></li>
-			<li> <a href="#" data-icon="home"></a></li>
+			<li> <a href="#home" data-icon="home"></a></li>
 			<li> <a href="#" data-icon="edit"></a></li>
 		</ul>
 		</div>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
-<div data-role="page" id="contacts">
-	<div data-role="header">
-		<h1>TESTING</h1>
+
+
+
+<div data-role="page" id="profile">
+	
+	<div data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+	    <ul>
+                <li class="newsfeed"><a href="#" title="Home">News Feed</a></li>
+                <li class="profile"><a href="#" title="Profile">Profile</a></li>
+                <li class="setting"><a href="#" title="Setting">Setting</a></li>
+                <li class="logout"><a href="#" title="Logout">Logout</a></li>
+                <li class="report"><a href="#" title="Report">Report Bug</a></li>
+        </ul>
+	    <!-- panel content goes here -->
+	</div><!-- /panel -->
+
+	<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
+			<li> <a href="#profile" data-icon="user"></a></li>
+			<li> <a href="#mypanel" data-icon="bars"></a></li>
+		</ul>
 	</div>
 
-
-	<div data-role ="content">
-		<p>Page content goes here.</p>
-		<div data-role ="navbar">
-			<ul>
-				<li>
-					<a href= "#home" class="ui-btn"> Home (local link)</a> </li>
-				<li> <a href= "#contacts" class="ui-btn"> Contacts (local link)</a>
-				</li>
-			</ul>
-		</div>
-		<div>Here
-		<ul data-role='listview' data-inset = 'True'>             
-			<li>Joe</a></li>
-			<li>Jack</li>
-			<li>Jeff</li>
+	<div data-role ="footer">
+		<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="search"></a></li>
+			<li> <a href="#home" data-icon="home"></a></li>
+			<li> <a href="#" data-icon="edit"></a></li>
 		</ul>
 		</div>
-		<br />
-		<a href="http://google.com">Google</a>
-		<button>Button</button>
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Footer</h4>
 	</div><!-- /footer -->
 </div>
+
+
+
 
 </body>
 </html>
