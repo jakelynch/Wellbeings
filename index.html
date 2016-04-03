@@ -23,8 +23,22 @@
                 <li class="logout"><a href="#" title="Logout">Logout</a></li>
                 <li class="report"><a href="#" title="Report">Report Bug</a></li>
         </ul>
-	    <!-- panel content goes here -->
 	</div><!-- /panel -->
+
+	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>What do you need help with?</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div><!-- /newpost -->
+
 
 
 	<div data-role="navbar">
@@ -33,7 +47,7 @@
 			<li> <a href="#profile" data-icon="user"></a></li>
 			<li> <a href="#mypanel" data-icon="bars"></a></li>
 		</ul>
-	</div>
+	</div><!-- /header -->
 
 	<div data-role ="content">
 		<p>Page content goes here.</p>
@@ -57,22 +71,7 @@
 			<li> <a href="#" data-icon="search"></a></li>
 			<li> <a href="#home" data-icon="home"></a></li>
 			<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
-			<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-			    <form>
-			        <div style="padding:10px 20px;">
-			            <h3>What do you need help with?</h3>
-			            <label for="un" class="ui-hidden-accessible">Username:</label>
-			            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
-			            <label for="textarea-1"></label>
-    					<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
-			            
-			            <button type="submit" data-theme="b" data-icon="edit">Post</button>
-			        </div>
-			    </form>
-			</div>
 		</li>
-
-
 		</ul>
 		</div>
 	</div><!-- /footer -->
