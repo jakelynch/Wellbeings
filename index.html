@@ -24,19 +24,31 @@
                 <li class="ui-btn" ><a href="#" title="Logout">Logout</a></li>
                 <li class="ui-btn" ><a href="#" title="Report">Report Bug</a></li>
         </ul>
-	    <!-- panel content goes here -->
 	</div><!-- /panel -->
 
+	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>What do you need help with?</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div><!-- /newpost -->
 
 
 
 	<div data-role="navbar">
 		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
-			<li> <a href="#profile" data-icon="user"></a></li>
-			<li> <a href="#mypanel" data-icon="bars"></a></li>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
-	</div>
+	</div><!-- /header -->
 
 	<div data-role ="content">
 		<p>Page content goes here.</p>
@@ -57,25 +69,10 @@
 	<div data-role ="footer">
 		<div data-role="navbar">
 		<ul>
-			<li> <a href="#" data-icon="search"></a></li>
-			<li> <a href="#home" data-icon="home"></a></li>
+			<li> <a href="#" data-icon="search">Search</a></li>
+			<li> <a href="#home" data-icon="home">Home</a></li>
 			<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
-			<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-			    <form>
-			        <div style="padding:10px 20px;">
-			            <h3>What do you need help with?</h3>
-			            <label for="un" class="ui-hidden-accessible">Username:</label>
-			            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
-			            <label for="textarea-1"></label>
-    					<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
-			            
-			            <button type="submit" data-theme="b" data-icon="edit">Post</button>
-			        </div>
-			    </form>
-			</div>
 		</li>
-
-
 		</ul>
 		</div>
 	</div><!-- /footer -->
@@ -97,12 +94,31 @@
 	    <!-- panel content goes here -->
 	</div><!-- /panel -->
 
+	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>What do you need help with?</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div><!-- /newpost -->
+
 	<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
 			<li> <a href="#profile" data-icon="user"></a></li>
 			<li> <a href="#mypanel" data-icon="bars"></a></li>
 		</ul>
+	</div>
+
+	<div id="profButtons">
+		<button>my posts</button>
+		<button>my answers</button>
 	</div>
 
 	<div data-role ="footer">
@@ -115,12 +131,6 @@
 		</div>
 	</div><!-- /footer -->
 </div>
-
-<<<<<<< HEAD
-<div data-role="page" id="post">
-=======
-
->>>>>>> bce32521913eeef5c82d5ccad6c2a675c7e90945
 
 
 </body>
