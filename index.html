@@ -39,15 +39,51 @@
 <div data-role="page" id="home">
 	
 	<!--pop out side menu-->
-	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+		<div background = "img/background_test.jpg" class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
-                <li class="ui-btn" ><a href="#" title="Home">News Feed</a></li>
-                <li class="ui-btn" ><a href="#" title="Profile">Profile</a></li>
-                <li class="ui-btn" ><a href="#" title="Setting">Setting</a></li>
-                <li class="ui-btn" ><a href="#" title="Logout">Logout</a></li>
-                <li class="ui-btn" ><a href="#" title="Report">Report Bug</a></li>
+			<form>
+				<input type="text" name="search" placeholder="Search..">
+				<a class = "ui-btn">Search</a>
+			</form>
+
+            <li class="ui-btn" >
+            	<img src="img/NewMsg.png" width = "50" height = "50">
+            	<p>News Feed</p>
+            </li>
+            
+            <li class="ui-btn" >
+            	<img src="img/user.png" width="50" height="50">
+            	<p>Profile</p>
+            
+            </li>
+            
+            <li class="ui-btn">
+            	<img src="img/connections.png" width="50" height="50">
+            	<p>Connections</p>
+            </li>
+            
+            <li class = "ui-btn">
+            	<img src="img/surf.png" width = "50" height = "50">
+                <div data-role="collapsible">
+	                	
+					    <h5>Categories</h5>
+				    	<h8 class="ui-btn">Relationship</h8>
+				    	<p class="ui-btn">School</p>
+				    	<p class="ui-btn">Family</p>
+				    	<p class="ui-btn">Homework</p>
+				    	<p class="ui-btn">SAT</p>
+				    	<p class="ui-btn">Depression</p>
+				</div>
+            </li>
+            
+
+            
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
+            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
+            <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
-	</div><!-- /panel -->
+	</div>
+	<!-- /panel -->
 
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 	    <form>
