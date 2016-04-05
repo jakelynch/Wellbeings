@@ -19,7 +19,6 @@
 		    border-radius: 4px;
 		    font-size: 16px;
 		    background-color: white;
-		    background-image: url('img/Logo.png');
 		    background-position: 10px 10px; 
 		    background-repeat: no-repeat;
 		    padding: 12px 20px 12px 40px;
@@ -34,8 +33,10 @@
 	</style>
 </head>
 <body>
-	
-<div data-role="page" id="profile">
+
+
+<!-- LOGIN PAGE -->
+<div data-role="page" id="login">
 	<div id="logo_img">
 		<img src="img/Logo.png" text-align="center">
 		<p>Socially Sincere Support</p>
@@ -45,44 +46,33 @@
 		<a class="ui-btn" href="#home">Log In</a>
 		<a class="ui-btn" href="#home">Sign Up!</a>
 	</div>
-</div> <!-- LOGIN PAGE -->
+</div> 
+<!-- /LOGIN PAGE -->
 
+
+<!-- HOME PAGE -->
 <div data-role="page" id="home">
 	
+	<!-- HEADER -->
 	<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
 			<li> <a href="#profile" data-icon="user">Profile</a></li>
 			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
-	</div><!-- /header -->
+	</div>
+	<!-- /HEADER -->
 	
-	<!--pop out side menu-->
+	<!-- MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
-			<form>
-				<input type="text" name="search" placeholder="Search..">
-				<a class = "ui-btn">Search</a>
-			</form>
-
-            <li class="ui-btn" >
-            	<img src="img/NewMsg.png" width = "50" height = "50">
-            	<p>News Feed</p>
-            </li>
-            
-            <li class="ui-btn" >
-            	<img src="img/user.png" width="50" height="50">
-            	<p>Profile</p>
-            
-            </li>
-            
             <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
+            	<img src="img/connections.png" width="30" height="30">
             	<p>Connections</p>
             </li>
             
             <li class = "ui-btn">
-            	<img src="img/surf.png" width = "50" height = "50">
+            	<img src="img/surf.png" width = "30" height = "30">
                 <div data-role="collapsible">
 	                	
 					    <h5>Categories</h5>
@@ -94,15 +84,15 @@
 				    	<p class="ui-btn">Depression</p>
 				</div>
             </li>
-            
-
-            
-            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
-            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
+           
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
+            <li><a class="ui-btn" href="login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
             <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
-	</div><!-- /panel -->
+	</div>
+	<!-- /MENU -->
 
+	<!-- newpost -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
@@ -115,8 +105,10 @@
 	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
 	        </div>
 	    </form>
-	</div><!-- /newpost -->
+	</div>
+	<!-- /newpost -->
 
+	<!-- footer -->
 	<div data-role ="footer">
 		<div data-role="navbar">
 			<ul>
@@ -125,10 +117,13 @@
 				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
 			</ul>
 		</div>
-	</div><!-- /footer -->
-</div><!-- /page -->
+	</div>
+	<!-- /footer -->
 
+</div>
+<!-- /HOME PAGE -->
 
+<!-- PROFILE PAGE -->
 <div data-role="page" id="profile">
 	
 	<svg height="110" width="110">
@@ -143,7 +138,7 @@
 		<img src="img/surf.png" alt="blur image" left = "2000px" top = "50px" width = "90" height = "90" style="vertical-align:middle" filter="url(#f1)">
 	</div>
 		
-		<!--pop out side menu-->
+	<!-- menu -->
 	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
 			<form>
@@ -187,10 +182,10 @@
             <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
             <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
-	</div><!-- /panel -->
-	
-	
+	</div>
+	<!-- /menu -->
 
+	<!-- newpost -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
@@ -203,8 +198,10 @@
 	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
 	        </div>
 	    </form>
-	</div><!-- /newpost -->
+	</div>
+	<!-- /newpost -->
 
+	<!-- HEADER -->
 	<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
@@ -212,12 +209,14 @@
 			<li> <a href="#mypanel" data-icon="bars"></a></li>
 		</ul>
 	</div>
+	<!-- /HEADER -->
 
 	<div id="abs_Center">
 		<button>my posts</button>
 		<button>my answers</button>
 	</div>
 
+	<!-- footer -->
 	<div data-role ="footer">
 		<div data-role="navbar">
 		<ul>
@@ -226,8 +225,11 @@
 			<li> <a href="#" data-icon="edit"></a></li>
 		</ul>
 		</div>
-	</div><!-- /footer -->
+	</div>
+	<!-- /footer -->
+
 </div>
+<!-- /PROFILE PAGE -->
 
 
 </body>
