@@ -9,6 +9,13 @@
 	<link rel="stylesheet" href="css/main.css"/>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript">
+            $(function () {
+                $.get("banner.html", function (data) {
+                    $("#home#appendtothis").append(data);
+                });
+            });
+    </script>
 	
 	<style> 
 		input[type=text] 
@@ -37,7 +44,7 @@
 	
 <div data-role="page" id="profile">
 	<div data-role ="header" id="logo">
-		<img id= "logo_img" src="img/Logo.png">
+		<img id="logo_img" src="img/Logo.png">
 		<p id="logo_sub">Socially Sincere Support</p>
 	</div>
 
@@ -123,15 +130,144 @@
 	</div>
 
 	<div data-role ="content">
-		<p></p>
+		<body>
+		<div data-role="header">
+			<div data-role="navbar">
+    		<ul>
+      			<li><a href="#aroundyou">Around You</a></li>
+      			<li><a href="#connections">Connections</a></li>
+    		</ul>
+  		</div>
+  	</div>
 
 
+  		<!-- Recent Feed -->
+  		<div data-role="content" class="ui-content" id="aroundyou">
+  			<div>
+  				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+    			<p>Aaron - Suspended</p>
+    			<p id="indent">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
+    			<p>#grounded</p>
+    			<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+    			<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Emily C. - Breakup</p>
+				<p id="indent">My boyfriend just broke up with me over text.  What a jerk!</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Anonymous - Depressed</p>
+				<p id="indent">Always feeling apathetic, don't want to socialize.  I need some help.  Anyone out there?</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Peter - Laid off</p>
+				<p id="indent">Got laid off from company downsizing.  Was trying to save for a down payment on my house, and now am out of luck.  I don't want to worry my wife about the financial burden, but am in a bad situation.  Has anyone else been here before?</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Lauren - Failed Exam</p>
+				<p id="indent">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Anna - Dating Woes</p>
+				<p id="indent">Just got asked out on a date, and don't know how to turn him down!  What do I say?</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+  		</div>
 
-		<div data-role="page" id="contacts"></div>
-		<div data-role="page" id="home"></div>
-		<br />
+  		<!-- Connections Feed -->
+  		<div data-role="content">
+    		<div data-role="navbar">
+    		<ul>
+      			<li><a href="#aroundyou">Around You</a></li>
+      			<li><a href="#connections">Connections</a></li>
+    		</ul>
+  			</div>
+  		</div>
+  		 <div data-role="main" class="ui-content" id="connections">
+  		 	<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Anna - Dating Woes</p>
+				<p id="indent">Just got asked out on a date, and don't know how to turn him down!  What do I say?</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Anonymous - Depressed</p>
+				<p id="indent">Always feeling apathetic, don't want to socialize.  I need some help.  Anyone out there?</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Emily C. - Breakup</p>
+				<p id="indent">My boyfriend just broke up with me over text.  What a jerk!</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+				<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Peter - Laid off</p>
+				<p id="indent">Got laid off from company downsizing.  Was trying to save for a down payment on my house, and now am out of luck.  I don't want to worry my wife about the financial burden, but am in a bad situation.  Has anyone else been here before?</p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+  			<div>
+  				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+    			<p>Aaron - Suspended</p>
+    			<p id="indent">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
+    			<p>#grounded</p>
+    			<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+    			<br>
+			</div>
+			<div>
+				<hr width="95%" align="center">
+				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+				<p>Lauren - Failed Exam</p>
+				<p id="indent">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
+				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<br>
+			</div>
+  		
 
-	</div><!-- /content -->
+  		<!-- Footer -->
+
+	<!-- /content -->
 
 	<div data-role ="footer">
 		<div data-role="navbar">
@@ -142,7 +278,7 @@
 		</li>
 		</ul>
 
-	</div><!-- /footer -->
+		</div><!-- /footer -->
 </div><!-- /page -->
 
 
@@ -230,6 +366,7 @@
 	<div>
 		<button>my posts</button>
 		<button>my answers</button>
+
 	</div>
 
 	<div data-role ="footer">
