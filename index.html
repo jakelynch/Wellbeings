@@ -49,19 +49,8 @@
 </div> 
 <!-- /LOGIN PAGE -->
 
-
 <!-- HOME PAGE -->
 <div data-role="page" id="home">
-	
-	<!-- HEADER -->
-	<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a href="#profile" data-icon="user">Profile</a></li>
-			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
-		</ul>
-	</div>
-	<!-- /HEADER -->
 	
 	<!-- MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
@@ -86,11 +75,21 @@
             </li>
            
             <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
-            <li><a class="ui-btn" href="login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
-            <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
+            <li><a class="ui-btn" href="#login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
+            <li> <a class="ui-btn" href="#bug" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop" class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</a></li>
         </ul>
 	</div>
 	<!-- /MENU -->
+
+	<!-- HEADER -->
+	<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
+		</ul>
+	</div>
+	<!-- /HEADER -->
 
 	<!-- newpost -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
@@ -107,6 +106,22 @@
 	    </form>
 	</div>
 	<!-- /newpost -->
+
+	<!-- report bug -->
+	<div data-role="popup" id="bug" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>Sorry about that...</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Location" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Please describe the bug"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div>
+	<!-- /report bug -->
 
 	<!-- footer -->
 	<div data-role ="footer">
@@ -123,47 +138,23 @@
 </div>
 <!-- /HOME PAGE -->
 
+
+
+
+
 <!-- PROFILE PAGE -->
 <div data-role="page" id="profile">
-	
-	<svg height="110" width="110">
-	  <defs>
-	    <filter id="f1" x="90" y="90">
-	      <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
-	    </filter>
-	  </defs>
-	</svg>
-	
-	<div position = "absolute">
-		<img src="img/surf.png" alt="blur image" left = "2000px" top = "50px" width = "90" height = "90" style="vertical-align:middle" filter="url(#f1)">
-	</div>
-		
-	<!-- menu -->
-	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
-	    <ul>
-			<form>
-				<input type="text" name="search" placeholder="Search..">
-				<a class = "ui-btn">Search</a>
-			</form>
 
-            <li class="ui-btn" >
-            	<img src="img/NewMsg.png" width = "50" height = "50">
-            	<p>News Feed</p>
-            </li>
-            
-            <li class="ui-btn" >
-            	<img src="img/user.png" width="50" height="50">
-            	<p>Profile</p>
-            
-            </li>
-            
+	<!-- MENU -->
+	<div class="ui-menu" data-role="panel" id="mypanel2" data-position="right" data-display="overlay">
+	    <ul>
             <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
+            	<img src="img/connections.png" width="30" height="30">
             	<p>Connections</p>
             </li>
             
             <li class = "ui-btn">
-            	<img src="img/surf.png" width = "50" height = "50">
+            	<img src="img/surf.png" width = "30" height = "30">
                 <div data-role="collapsible">
 	                	
 					    <h5>Categories</h5>
@@ -175,18 +166,26 @@
 				    	<p class="ui-btn">Depression</p>
 				</div>
             </li>
-            
-
-            
-            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
-            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
+           
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
+            <li><a class="ui-btn" href="#login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
             <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
 	</div>
-	<!-- /menu -->
+	<!-- /MENU -->
+
+	<!-- HEADER -->
+	<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a class="ui-btn" href="#mypanel2" data-icon="bars">Menus</a></li>
+		</ul>
+	</div>
+	<!-- /HEADER -->
 
 	<!-- newpost -->
-	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	<div data-role="popup" id="popupLogin2" data-theme="a" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
@@ -201,33 +200,23 @@
 	</div>
 	<!-- /newpost -->
 
-	<!-- HEADER -->
-	<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
-			<li> <a href="#profile" data-icon="user"></a></li>
-			<li> <a href="#mypanel" data-icon="bars"></a></li>
-		</ul>
-	</div>
-	<!-- /HEADER -->
-
 	<div id="abs_Center">
 		<button>my posts</button>
 		<button>my answers</button>
 	</div>
 
+
 	<!-- footer -->
 	<div data-role ="footer">
 		<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="search"></a></li>
-			<li> <a href="#home" data-icon="home"></a></li>
-			<li> <a href="#" data-icon="edit"></a></li>
-		</ul>
+			<ul>
+				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a href="#home" data-icon="home">Home</a></li>
+				<li> <a href="#popupLogin2" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
 		</div>
 	</div>
 	<!-- /footer -->
-
 </div>
 <!-- /PROFILE PAGE -->
 
