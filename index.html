@@ -9,23 +9,93 @@
 	<link rel="stylesheet" href="css/main.css"/>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+	<style> 
+		input[type=text] 
+		{
+		    width: 200px;
+		    box-sizing: border-box;
+		    border: 0px solid #ccc;
+		    border-radius: 4px;
+		    font-size: 16px;
+		    background-color: white;
+		    background-image: url('img/Logo.png');
+		    background-position: 10px 10px; 
+		    background-repeat: no-repeat;
+		    padding: 12px 20px 12px 40px;
+
+		    transition: width 0.4s ease-in-out;
+		}
+		
+		input[type=text]:focus 
+		{
+		    width: 100%;
+		}
+	</style>
 </head>
 <body>
 	
+<div data-role="page" id="profile">
+	<div data-role ="header" id="logo">
+		<img id= "logo_img" src="img/Logo.png">
+		<p id="logo_sub">Socially Sincere Support</p>
+	</div>
+
+	<div id="abs_Center">
+		<button>Log In</button>
+		<button>Sign Up!</button>
+	</div>
+</div> <!-- LOGIN PAGE -->
 
 <div data-role="page" id="home">
-	
-	<div data-role="header" style="padding:15px;">
-		<h1 style="font-style: italic;font-size:150%;">WellBeings</h1>
+	<div data-role="header" id="logo">
+		<img src="img/Logo.png" id="logo_img" text-align="center">
+		<p id="logo_sub">Socially Sincere Support</p>
+		
 	</div>
 	<!--pop out side menu-->
-	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+		<div background = "img/background_test.jpg" class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
-                <li class="ui-btn" ><a href="#" title="Home">News Feed</a></li>
-                <li class="ui-btn" ><a href="#" title="Profile">Profile</a></li>
-                <li class="ui-btn" ><a href="#" title="Setting">Setting</a></li>
-                <li class="ui-btn" ><a href="#" title="Logout">Logout</a></li>
-                <li class="ui-btn" ><a href="#" title="Report">Report Bug</a></li>
+			<form>
+				<input type="text" name="search" placeholder="Search..">
+				<a class = "ui-btn">Search</a>
+			</form>
+
+            <li class="ui-btn" >
+            	<img src="img/NewMsg.png" width = "50" height = "50">
+            	<p>News Feed</p>
+            </li>
+            
+            <li class="ui-btn" >
+            	<img src="img/user.png" width="50" height="50">
+            	<p>Profile</p>
+            
+            </li>
+            
+            <li class="ui-btn">
+            	<img src="img/connections.png" width="50" height="50">
+            	<p>Connections</p>
+            </li>
+            
+            <li class = "ui-btn">
+            	<img src="img/surf.png" width = "50" height = "50">
+                <div data-role="collapsible">
+	                	
+					    <h5>Categories</h5>
+				    	<h8 class="ui-btn">Relationship</h8>
+				    	<p class="ui-btn">School</p>
+				    	<p class="ui-btn">Family</p>
+				    	<p class="ui-btn">Homework</p>
+				    	<p class="ui-btn">SAT</p>
+				    	<p class="ui-btn">Depression</p>
+				</div>
+            </li>
+            
+
+            
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
+            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
+            <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
 	</div><!-- /panel -->
 
@@ -71,28 +141,69 @@
 			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
 		</li>
 		</ul>
-		</div>
+
 	</div><!-- /footer -->
 </div><!-- /page -->
 
 
-
-
 <div data-role="page" id="profile">
 	
+
 	<div data-role="header" style="padding:15px;">
-		<h1 style="font-style: italic;font-size:150%;">WellBeings</h1>
+		<div id="logo_img">
+		<img src="img/Logo.png" text-align="center">
+		<p>Socially Sincere Support</p>
+		</div>
 	</div>
-	<div data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+
+		<!--pop out side menu-->
+	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+
 	    <ul>
-                <li class="newsfeed"><a href="#" title="Home">News Feed</a></li>
-                <li class="profile"><a href="#" title="Profile">Profile</a></li>
-                <li class="setting"><a href="#" title="Setting">Setting</a></li>
-                <li class="logout"><a href="#" title="Logout">Logout</a></li>
-                <li class="report"><a href="#" title="Report">Report Bug</a></li>
+			<form>
+				<input type="text" name="search" placeholder="Search..">
+				<a class = "ui-btn">Search</a>
+			</form>
+
+            <li class="ui-btn" >
+            	<img src="img/NewMsg.png" width = "50" height = "50">
+            	<p>News Feed</p>
+            </li>
+            
+            <li class="ui-btn" >
+            	<img src="img/user.png" width="50" height="50">
+            	<p>Profile</p>
+            
+            </li>
+            
+            <li class="ui-btn">
+            	<img src="img/connections.png" width="50" height="50">
+            	<p>Connections</p>
+            </li>
+            
+            <li class = "ui-btn">
+            	<img src="img/surf.png" width = "50" height = "50">
+                <div data-role="collapsible">
+	                	
+					    <h5>Categories</h5>
+				    	<p class="ui-btn">Relationship</p>
+				    	<p class="ui-btn">School</p>
+				    	<p class="ui-btn">Family</p>
+				    	<p class="ui-btn">Homework</p>
+				    	<p class="ui-btn">SAT</p>
+				    	<p class="ui-btn">Depression</p>
+				</div>
+            </li>
+            
+
+            
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
+            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
+            <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
-	    <!-- panel content goes here -->
 	</div><!-- /panel -->
+	
+	
 
 	<div data-role="popup" id="popup" data-theme="e" class="ui-corner-all">
 	    <form>
@@ -116,7 +227,7 @@
 		</ul>
 	</div>
 
-	<div id="profButtons">
+	<div>
 		<button>my posts</button>
 		<button>my answers</button>
 	</div>
