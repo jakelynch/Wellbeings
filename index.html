@@ -49,8 +49,16 @@
 
 <div data-role="page" id="home">
 	
+	<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
+		</ul>
+	</div><!-- /header -->
+	
 	<!--pop out side menu-->
-		<div background = "img/background_test.jpg" class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
 			<form>
 				<input type="text" name="search" placeholder="Search..">
@@ -108,16 +116,6 @@
 	        </div>
 	    </form>
 	</div><!-- /newpost -->
-
-
-	<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a href="#profile" data-icon="user">Profile</a></li>
-			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
-		</ul>
-	</div><!-- /header -->
-
 
 	<div data-role ="footer">
 		<div data-role="navbar">
@@ -203,7 +201,7 @@
 		</ul>
 	</div>
 
-	<div>
+	<div id="abs_Center">
 		<button>my posts</button>
 		<button>my answers</button>
 	</div>
