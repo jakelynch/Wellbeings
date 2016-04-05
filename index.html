@@ -34,20 +34,34 @@
 	</style>
 </head>
 <body>
+<<<<<<< HEAD
 	
 <div data-role="page" id="login">
 	<div data-role ="header" id="logo">
 		<img id="logo_img" src="img/Logo.png">
 		<p id="logo_sub">Socially Sincere Support</p>
+=======
+
+
+<!-- LOGIN PAGE -->
+<div data-role="page" id="login">
+	<div id="logo_img">
+		<img src="img/Logo.png" text-align="center">
+		<p>Socially Sincere Support</p>
+>>>>>>> cd564eef10f16a382083433a61c2703b4efd67bb
 	</div>
 
 	<div id="abs_Center">
 		<a class="ui-btn" href="#home">Log In</a>
 		<a class="ui-btn" href="#home">Sign Up!</a>
 	</div>
-</div> <!-- LOGIN PAGE -->
+</div> 
+<!-- /LOGIN PAGE -->
 
+
+<!-- HOME PAGE -->
 <div data-role="page" id="home">
+<<<<<<< HEAD
 	<div data-role="header" data-position = "fixed">
 		<div id="logo">
 		<img src="img/Logo.png" id="logo_img" text-align="center">
@@ -65,30 +79,29 @@
 
 	<!--pop out side menu-->
 		<div background = "img/background_test.jpg" class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+=======
+	
+	<!-- HEADER -->
+	<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
+		</ul>
+	</div>
+	<!-- /HEADER -->
+	
+	<!-- MENU -->
+	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+>>>>>>> cd564eef10f16a382083433a61c2703b4efd67bb
 	    <ul>
-			<form>
-				<input type="text" name="search" placeholder="Search..">
-				<a class = "ui-btn">Search</a>
-			</form>
-
-            <li class="ui-btn" >
-            	<img src="img/NewMsg.png" width = "50" height = "50">
-            	<p>News Feed</p>
-            </li>
-            
-            <li class="ui-btn" >
-            	<img src="img/user.png" width="50" height="50">
-            	<p>Profile</p>
-            
-            </li>
-            
             <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
+            	<img src="img/connections.png" width="30" height="30">
             	<p>Connections</p>
             </li>
             
             <li class = "ui-btn">
-            	<img src="img/surf.png" width = "50" height = "50">
+            	<img src="img/surf.png" width = "30" height = "30">
                 <div data-role="collapsible">
 	                	
 					    <h5>Categories</h5>
@@ -100,16 +113,16 @@
 				    	<p class="ui-btn">Depression</p>
 				</div>
             </li>
-            
-
-            
-            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
-            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
+           
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
+            <li><a class="ui-btn" href="login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
             <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
-	</div><!-- /panel -->
+	</div>
+	<!-- /MENU -->
 
 	<div data-role="popup" id="popupPost" data-theme="e" class="ui-corner-all">
+
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
@@ -121,6 +134,7 @@
 	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
 	        </div>
 	    </form>
+<<<<<<< HEAD
 	</div><!-- /post popup -->
 
 
@@ -271,6 +285,7 @@
 	</div>
 </div>
 	<div data-role="footer" data-position="fixed" data-fullscreen="true">
+
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
@@ -278,8 +293,11 @@
 			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
 		</ul>
 		</div>
-	</div><!-- /footer -->
+	</div>
+	<!-- /footer -->
+
 </div>
+<!-- /PROFILE PAGE -->
 
 
 </body>
