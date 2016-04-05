@@ -9,14 +9,8 @@
 	<link rel="stylesheet" href="css/main.css"/>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript">
-            $(function () {
-                $.get("banner.html", function (data) {
-                    $("#home#appendtothis").append(data);
-                });
-            });
-    </script>
-	
+	<script src="js/main.js"></script>
+
 	<style> 
 		input[type=text] 
 		{
@@ -63,7 +57,7 @@
 
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a data-icon="user" onclick=showpage("#aroundyou")>Profile</a></li>
 			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
 		</div>
@@ -130,19 +124,20 @@
 	</div><!-- /post popup -->
 
 
-	<div class="page" id = "page_home">
+	<div class="page">
+		<div id ="page_home">
 		
 			<div data-role="navbar">
     		<ul>
       			<li><a href="#aroundyou">Around You</a></li>
       			<li><a href="#connections">Connections</a></li>
-    		</ul>div>
+    		</ul>
 
   			</div>
 
   		<!-- Recent Feed -->
-  		<div class="ui-content" id="aroundyou">
-  			<div>
+  			<div id="aroundyou">
+  				<div>
   				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
     			<p>Aaron - Suspended</p>
     			<p id="indent">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
@@ -199,15 +194,14 @@
   		</div>
 
   		<!-- Connections Feed -->
-  		<div data-role="content">
+  		<div id="connections">
     		<div data-role="navbar">
     		<ul>
       			<li><a href="#aroundyou">Around You</a></li>
       			<li><a href="#connections">Connections</a></li>
     		</ul>
   			</div>
-  		</div>
-  		 <div class="ui-content" id="connections">
+
   		 	<div>
 				<hr width="95%" align="center">
 				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -263,10 +257,11 @@
 				<br>
 			</div>
 		</div>
-  	
+  	<div>
 
 
-	<div class="page" id="page_profile">
+	<div class="page">
+	<div id="page_profile">
 
 		<div>
 			<button>my posts</button>
@@ -274,13 +269,13 @@
 
 		</div>
 	</div>
-
+</div>
 	<div data-role="footer" data-position="fixed" data-fullscreen="true">
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
 			<li> <a href="#home" data-icon="home">Home</a></li>
-			<li> <a href="#popup" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
+			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
 		</ul>
 		</div>
 	</div><!-- /footer -->
