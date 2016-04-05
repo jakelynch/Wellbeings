@@ -18,6 +18,12 @@ html {
 
 [data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
 
+#logo_img {
+    text-align: center;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    width: 100%;
+}
 
 /*
  * Remove text-shadow in selection highlight:
