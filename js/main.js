@@ -1,0 +1,1 @@
+var doc= document.querySelector('link[rel="import"]').import;

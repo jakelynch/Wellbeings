@@ -15,6 +15,9 @@
 
 <div data-role="page" id="home">
 	
+	<div data-role="header" style="padding:15px;">
+		<h1 style="font-style: italic;font-size:150%;">WellBeings</h1>
+	</div>
 	<!--pop out side menu-->
 	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
@@ -26,7 +29,7 @@
         </ul>
 	</div><!-- /panel -->
 
-	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	<div data-role="popup" id="popupPost" data-theme="e" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
@@ -35,7 +38,7 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
 	        </div>
 	    </form>
 	</div><!-- /newpost -->
@@ -50,19 +53,14 @@
 	</div>
 
 	<div data-role ="content">
-		<p>Page content goes here.</p>
-		<div>Here
-		<ul data-role='listview' data-inset = 'True'>             
-			<li><a href="http://acura.com"> Acura </a></li>
-			<li><a href="http://audi.com">Audi</a></li>
-			<li><a href="http://bmw.com">BMW</a></li>
-		</ul>
-		</div>
+		<p></p>
+
+
+
 		<div data-role="page" id="contacts"></div>
 		<div data-role="page" id="home"></div>
 		<br />
-		<a href="http://google.com">Google</a>
-		<button>Button</button>
+
 	</div><!-- /content -->
 
 	<div data-role ="footer">
@@ -70,7 +68,7 @@
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
 			<li> <a href="#home" data-icon="home">Home</a></li>
-			<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
+			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
 		</li>
 		</ul>
 		</div>
@@ -82,6 +80,9 @@
 
 <div data-role="page" id="profile">
 	
+	<div data-role="header" style="padding:15px;">
+		<h1 style="font-style: italic;font-size:150%;">WellBeings</h1>
+	</div>
 	<div data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
                 <li class="newsfeed"><a href="#" title="Home">News Feed</a></li>
@@ -93,7 +94,7 @@
 	    <!-- panel content goes here -->
 	</div><!-- /panel -->
 
-	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	<div data-role="popup" id="popup" data-theme="e" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
@@ -102,16 +103,16 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
 	        </div>
 	    </form>
 	</div><!-- /newpost -->
 
 	<div data-role="navbar">
 		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back"></a></li>
-			<li> <a href="#profile" data-icon="user"></a></li>
-			<li> <a href="#mypanel" data-icon="bars"></a></li>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
 	</div>
 
@@ -123,9 +124,9 @@
 	<div data-role ="footer">
 		<div data-role="navbar">
 		<ul>
-			<li> <a href="#" data-icon="search"></a></li>
-			<li> <a href="#home" data-icon="home"></a></li>
-			<li> <a href="#" data-icon="edit"></a></li>
+			<li> <a href="#" data-icon="search">Search</a></li>
+			<li> <a href="#home" data-icon="home">Home</a></li>
+			<li> <a href="#popup" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
 		</ul>
 		</div>
 	</div><!-- /footer -->

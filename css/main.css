@@ -283,3 +283,36 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+
+/* Our Added CSS*/
+/**
+* Contents
+* 
+* 1. Test
+*/
+
+h1 {
+    color: blue;
+    font: serif;
+}
+
+.bgimg {
+/*    background-image: url(http://dummyimage.com/5x5/a80c10/ffffff.png), url(http://dummyimage.com/5x5/a80c10/ffffff.png);
+*/    background-repeat:repeat-x;
+    background-position:100% 120px, 100% -120px;
+    background-size:100% 180px;
+    background-color: blue;
+}
+.logo-font {
+    font-size:x-large;
+    font-weight:bold;
+}
+
+.ui-header{
+    background: yellow !important;
+}
+
+.ui-button{
+    background: yellow !important;
+}
