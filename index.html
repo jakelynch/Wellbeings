@@ -26,7 +26,6 @@
 		    border-radius: 4px;
 		    font-size: 16px;
 		    background-color: white;
-		    background-image: url('img/Logo.png');
 		    background-position: 10px 10px; 
 		    background-repeat: no-repeat;
 		    padding: 12px 20px 12px 40px;
@@ -42,24 +41,34 @@
 </head>
 <body>
 	
-<div data-role="page" id="profile">
+<div data-role="page" id="login">
 	<div data-role ="header" id="logo">
 		<img id="logo_img" src="img/Logo.png">
 		<p id="logo_sub">Socially Sincere Support</p>
 	</div>
 
 	<div id="abs_Center">
-		<button><a href="#home">Log In</a></button>
-		<button>Sign Up!</button>
+		<a class="ui-btn" href="#home">Log In</a>
+		<a class="ui-btn" href="#home">Sign Up!</a>
 	</div>
 </div> <!-- LOGIN PAGE -->
 
 <div data-role="page" id="home">
-	<div data-role="header" id="logo">
+	<div data-role="header" data-position = "fixed">
+		<div id="logo">
 		<img src="img/Logo.png" id="logo_img" text-align="center">
 		<p id="logo_sub">Socially Sincere Support</p>
-		
-	</div>
+		</div>
+		<div data-role="navbar">
+
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
+		</ul>
+		</div>
+	</div><!--header-->
+
 	<!--pop out side menu-->
 		<div background = "img/background_test.jpg" class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
@@ -89,7 +98,7 @@
                 <div data-role="collapsible">
 	                	
 					    <h5>Categories</h5>
-				    	<h8 class="ui-btn">Relationship</h8>
+				    	<p class="ui-btn">Relationship</p>
 				    	<p class="ui-btn">School</p>
 				    	<p class="ui-btn">Family</p>
 				    	<p class="ui-btn">Homework</p>
@@ -118,31 +127,21 @@
 	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
 	        </div>
 	    </form>
-	</div><!-- /newpost -->
+	</div><!-- /post popup -->
 
 
-	<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a href="#profile" data-icon="user">Profile</a></li>
-			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
-		</ul>
-	</div>
-
-	<div data-role ="content">
-		<body>
-		<div data-role="header">
+	<div class="page" id = "page_home">
+		
 			<div data-role="navbar">
     		<ul>
       			<li><a href="#aroundyou">Around You</a></li>
       			<li><a href="#connections">Connections</a></li>
-    		</ul>
-  		</div>
-  	</div>
+    		</ul>div>
 
+  			</div>
 
   		<!-- Recent Feed -->
-  		<div data-role="content" class="ui-content" id="aroundyou">
+  		<div class="ui-content" id="aroundyou">
   			<div>
   				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
     			<p>Aaron - Suspended</p>
@@ -208,7 +207,7 @@
     		</ul>
   			</div>
   		</div>
-  		 <div data-role="main" class="ui-content" id="connections">
+  		 <div class="ui-content" id="connections">
   		 	<div>
 				<hr width="95%" align="center">
 				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -263,113 +262,20 @@
 				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
 				<br>
 			</div>
-  		
-
-  		<!-- Footer -->
-
-	<!-- /content -->
-
-	<div data-role ="footer">
-		<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="search">Search</a></li>
-			<li> <a href="#home" data-icon="home">Home</a></li>
-			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
-		</li>
-		</ul>
-
-		</div><!-- /footer -->
-</div><!-- /page -->
+		</div>
+  	
 
 
-<div data-role="page" id="profile">
-	
+	<div class="page" id="page_profile">
 
-	<div data-role="header" style="padding:15px;">
-		<div id="logo_img">
-		<img src="img/Logo.png" text-align="center">
-		<p>Socially Sincere Support</p>
+		<div>
+			<button>my posts</button>
+			<button>my answers</button>
+
 		</div>
 	</div>
 
-		<!--pop out side menu-->
-	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
-
-	    <ul>
-			<form>
-				<input type="text" name="search" placeholder="Search..">
-				<a class = "ui-btn">Search</a>
-			</form>
-
-            <li class="ui-btn" >
-            	<img src="img/NewMsg.png" width = "50" height = "50">
-            	<p>News Feed</p>
-            </li>
-            
-            <li class="ui-btn" >
-            	<img src="img/user.png" width="50" height="50">
-            	<p>Profile</p>
-            
-            </li>
-            
-            <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
-            	<p>Connections</p>
-            </li>
-            
-            <li class = "ui-btn">
-            	<img src="img/surf.png" width = "50" height = "50">
-                <div data-role="collapsible">
-	                	
-					    <h5>Categories</h5>
-				    	<p class="ui-btn">Relationship</p>
-				    	<p class="ui-btn">School</p>
-				    	<p class="ui-btn">Family</p>
-				    	<p class="ui-btn">Homework</p>
-				    	<p class="ui-btn">SAT</p>
-				    	<p class="ui-btn">Depression</p>
-				</div>
-            </li>
-            
-
-            
-            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Setting</li>
-            <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
-            <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
-        </ul>
-	</div><!-- /panel -->
-	
-	
-
-	<div data-role="popup" id="popup" data-theme="e" class="ui-corner-all">
-	    <form>
-	        <div style="padding:10px 20px;">
-	            <h3>What do you need help with?</h3>
-	            <label for="un" class="ui-hidden-accessible">Username:</label>
-	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
-	            <label for="textarea-1"></label>
-				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
-	            
-	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
-	        </div>
-	    </form>
-	</div><!-- /newpost -->
-
-	<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a href="#profile" data-icon="user">Profile</a></li>
-			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
-		</ul>
-	</div>
-
-	<div>
-		<button>my posts</button>
-		<button>my answers</button>
-
-	</div>
-
-	<div data-role ="footer">
+	<div data-role="footer" data-position="fixed" data-fullscreen="true">
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
