@@ -19,7 +19,7 @@
 		    border-radius: 4px;
 		    font-size: 16px;
 		    background-color: white;
-		    background-image: url('img/Search-icon.png');
+		    background-image: url('img/Logo.png');
 		    background-position: 10px 10px; 
 		    background-repeat: no-repeat;
 		    padding: 12px 20px 12px 40px;
@@ -35,6 +35,17 @@
 </head>
 <body>
 	
+<div data-role="page" id="profile">
+	<div id="logo_img">
+		<img src="img/Logo.png" text-align="center">
+		<p>Socially Sincere Support</p>
+	</div>
+
+	<div id="abs_Center">
+		<button><a href="#home">Log In</a></button>
+		<button>Sign Up!</button>
+	</div>
+</div> <!-- LOGIN PAGE -->
 
 <div data-role="page" id="home">
 	
@@ -82,8 +93,7 @@
             <li class="ui-btn" ><img src = "img/logout.png" width = "30" height = "30">  Logout</li>
             <li class="ui-btn" ><img src = "img/bugReport.png" width = "30" height = "30">  Report Bug</li>
         </ul>
-	</div>
-	<!-- /panel -->
+	</div><!-- /panel -->
 
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 	    <form>
@@ -108,35 +118,17 @@
 		</ul>
 	</div><!-- /header -->
 
-	<div data-role ="content">
-		<p>Page content goes here.</p>
-		<div>Here
-		<ul data-role='listview' data-inset = 'True'>             
-			<li><a href="http://acura.com"> Acura </a></li>
-			<li><a href="http://audi.com">Audi</a></li>
-			<li><a href="http://bmw.com">BMW</a></li>
-		</ul>
-		</div>
-		<div data-role="page" id="contacts"></div>
-		<div data-role="page" id="home"></div>
-		<br />
-		<a href="http://google.com">Google</a>
-		<button>Button</button>
-	</div><!-- /content -->
 
 	<div data-role ="footer">
 		<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="search">Search</a></li>
-			<li> <a href="#home" data-icon="home">Home</a></li>
-			<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
-		</li>
-		</ul>
+			<ul>
+				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a href="#home" data-icon="home">Home</a></li>
+				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
 		</div>
 	</div><!-- /footer -->
 </div><!-- /page -->
-
-
 
 
 <div data-role="page" id="profile">
