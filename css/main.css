@@ -17,16 +17,34 @@ html {
 }
 
 [data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
-
-#logo_img {
+#logo{
     text-align: center;
     margin-left: 0 auto;
     margin-right: 0 auto;
-    width: 100%;
+    max-width: 100%; 
+    max-height: 125px !important;
+
+}
+#logo_img {
+    max-width: 40%;
+    max-height: 75px !important;
+    height: auto;
+    width: auto\9;
+    /*padding-top: 5px !important;*/
+
+}
+
+#logo_sub{
+    text-align: center;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    width: 100%; 
+
 }
 
 .button {
     position: relative;
+    color: blue!important;
 }
 
 #abs_Center {
@@ -304,6 +322,40 @@ textarea {
 }
 
 
+/* Our Added CSS*/
+/**
+* Contents
+* 
+* 1. Test
+*/
+
+h1 {
+    color: blue;
+    font: serif;
+}
+
+.bgimg {
+/*    background-image: url(http://dummyimage.com/5x5/a80c10/ffffff.png), url(http://dummyimage.com/5x5/a80c10/ffffff.png);
+*/   background-repeat:repeat-x;
+    background-position:100% 120px, 100% -120px;
+    background-size:100% 180px;
+    background-color: blue;
+}
+.logo-font {
+    font-size:x-large;
+    font-weight:bold;
+}
+
+.ui-header{
+    background: crimson !important;
+    max-height: 125px !important;
+
+}
+
+.ui-button{
+    background: yellow !important;
+}
+
 .sub-menu {
     width:160%;
     padding:5px 0px;
@@ -330,3 +382,20 @@ textarea {
 .sub-menu li a:hover, .sub-menu .current-item a {
     background:#3e3436;
 }
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 142px; /* .push must be the same height as .footer */
+}
+
