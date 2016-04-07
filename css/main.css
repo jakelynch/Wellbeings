@@ -348,7 +348,7 @@ h1 {
 
 .ui-header{
     background: crimson !important;
-    max-height: 125px !important;
+    max-height: 250px !important;
 
 }
 
@@ -398,4 +398,5 @@ html, body {
 .footer, .push {
     height: 142px; /* .push must be the same height as .footer */
 }
+
 

@@ -8,7 +8,6 @@ $(document).ready(function() {
 }
 
 function showpage(id){
-    
     $(".page").hide();
     $(id).show();
 }
