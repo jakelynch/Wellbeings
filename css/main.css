@@ -57,6 +57,10 @@ html {
     top: 50%; left: 0; bottom: 0; right: 0;
 }
 
+#indent {
+    text-align:center;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
