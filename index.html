@@ -54,7 +54,7 @@
 
 <!-- HOME PAGE -->
 <div data-role="page" id="home">
-	<div data-role="header" data-position = "fixed">
+	<div data-role="header" data-position = "fixed" style = "max_height:200px !important;">
 		<div id="logo">
 		<img src="img/Logo.png" id="logo_img" text-align="center">
 		<p id="logo_sub">Socially Sincere Support</p>
@@ -138,7 +138,7 @@
 	<!-- /post popup -->
 
 <!-- PROFILE PAGE -->
-	<div role="main" class="wrapper">
+	<div data-role="main" class="wrapper" id="content">
 		<div class="page" id="page_profile">
 			<div id="abs_Center">
 				<button>my posts</button>
@@ -148,7 +148,7 @@
   			</div>
 	  	</div>
 		<div class="page" id="aroundyou">
-		    <div data-role="navbar">
+		    <div data-role="navbar" style="position:relative">
     		<ul>
       			<li><a onclick=showpage("#aroundyou")>Around You</a></li>
       			<li><a onclick=showpage("#connections")>Connections</a></li>
@@ -214,7 +214,12 @@
 
 	  		<!-- Connections Feed -->
 		<div class= "page" id="connections">
-		
+			<div data-role="navbar">
+    		<ul>
+      			<li><a onclick=showpage("#aroundyou")>Around You</a></li>
+      			<li><a onclick=showpage("#connections")>Connections</a></li>
+    		</ul>
+			</div>
 		 	<div>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -277,7 +282,7 @@
 
 	<div data-role="footer" data-position="fixed">
 
-		<div data-role="navbar">
+		<div data-role="navbar" data-position="fixed">
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
 			<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
@@ -291,4 +296,5 @@
 
 
 </body>
+
 </html>
