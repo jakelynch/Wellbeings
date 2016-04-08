@@ -57,8 +57,12 @@ html {
     top: 50%; left: 0; bottom: 0; right: 0;
 }
 
+<<<<<<< HEAD
 #indent {
     
+=======
+#center {
+>>>>>>> 7822760ee03e953d6d9744b8e59bd0c437a2964e
     text-align:center;
 }
 
