@@ -1,3 +1,5 @@
+//test
+
 $(document).ready(function() {
 	if (localStorage.getItem("session") != null) {
 	    showpage(#home);
@@ -11,3 +13,5 @@ function showpage(id){
     $(".page").hide();
     $(id).show();
 }
+
+// test
