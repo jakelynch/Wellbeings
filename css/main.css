@@ -16,7 +16,8 @@ html {
     line-height: 1.4;
 }
 
-[data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
+[data-role=footer]{bottom:0; position:fixed !important; top: auto !important; width:100%;}
+
 #logo{
     text-align: center;
     margin-left: 0 auto;
@@ -54,6 +55,11 @@ html {
     margin: auto;
     position: absolute;
     top: 50%; left: 0; bottom: 0; right: 0;
+}
+
+#indent {
+    
+    text-align:center;
 }
 
 /*
@@ -348,7 +354,7 @@ h1 {
 
 .ui-header{
     background: crimson !important;
-    max-height: 125px !important;
+    max-height: 250px !important;
 
 }
 
@@ -398,4 +404,5 @@ html, body {
 .footer, .push {
     height: 142px; /* .push must be the same height as .footer */
 }
+
 
