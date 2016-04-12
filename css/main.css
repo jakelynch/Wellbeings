@@ -16,7 +16,18 @@ html {
     line-height: 1.4;
 }
 
-[data-role=footer]{bottom:0; position:fixed !important; top: auto !important; width:100%;}
+[data-role=page] {
+    padding-bottom: 60px;
+}
+
+[data-role=footer] {
+    bottom:0; 
+    position:fixed !important; 
+    top: auto !important; 
+    width:100%;
+    z-index: 999;
+    padding-top: 1px;
+}
 
 #logo{
     text-align: center;
@@ -26,6 +37,7 @@ html {
     max-height: 125px !important;
 
 }
+
 #logo_img {
     max-width: 40%;
     max-height: 75px !important;
@@ -48,6 +60,19 @@ html {
     color: blue!important;
 }
 
+#replies {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#reply {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #abs_Center {
     width: 50%;
     height: 50%;
@@ -57,14 +82,17 @@ html {
     top: 50%; left: 0; bottom: 0; right: 0;
 }
 
-<<<<<<< HEAD
-#indent {
-    
-=======
+.active {
+       background:#ccc url(path/to/image/marker.png) center bottom no-repeat; 
+}
+
+
 #center {
->>>>>>> 7822760ee03e953d6d9744b8e59bd0c437a2964e
+
     text-align:center;
 }
+
+
 
 /*
  * Remove text-shadow in selection highlight:
