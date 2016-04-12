@@ -2,7 +2,13 @@ $(document).ready(function() {
 		if (localStorage.getItem('htmlsave')){
 		var htmlstore = localStorage.getItem('htmlsave')
 		$('#reply').html(htmlstore);
+
 	}
+    if (localStorage.getItem('postsave')){
+        var postsave = localStorage.getItem('postsave')
+        $('#aroundyou').html(postsave);
+        
+    }
 // 	if (localStorage.getItem("session") != null) {
 // 	    showpage("#home");
 // 	}						

@@ -106,7 +106,7 @@
 	<!-- newpost -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
-	    <form>
+	    <form id="frm0" action="#">
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
 	            <label for="un" class="ui-hidden-accessible">Username:</label>
@@ -114,9 +114,19 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button value="Reply" data-icon="edit"></button>
+	            <button value="Reply" data-icon="edit" onClick=testFunc();></button>
 	        </div>
 	    </form>
+		<script type="text/javascript">
+		function testFunc(){
+			var x = document.getElementById("frm0");
+			alert(x.elements[0].value)
+
+			$("#aroundyou").append('<div><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>'+x.elements[0].value+'</p></h4><br><div id="center">'+x.elements[1].value+	'<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div')
+
+			localStorage.setItem('postsave', $('#aroundyou').html());
+		}
+		</script>
 
 	</div><!-- /newpost -->
 
@@ -140,7 +150,7 @@
 
 			$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
 
-			localStorage.setItem('htmlsave', $('#rectangle').html());
+			localStorage.setItem('htmlsave', $('#reply').html());
 		}
 		</script>
 	</div><!-- /newpost -->
