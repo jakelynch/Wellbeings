@@ -1,4 +1,8 @@
-// $(document).ready(function() {
+$(document).ready(function() {
+		if (localStorage.getItem('htmlsave')){
+		var htmlstore = localStorage.getItem('htmlsave')
+		$('#reply').html(htmlstore);
+	}
 // 	if (localStorage.getItem("session") != null) {
 // 	    showpage("#home");
 // 	}						
@@ -13,7 +17,16 @@
 // 	// 	showpage("#" + id);
 // 	// });
 // })
+})
 
+$(document).delegate('#my-dialog-button', 'click', function () {
+
+    //change to the dialog, forcing the hash to remain the same and the page to be viewed as a dialog
+    $.mobile.changePage($('#my-dialog'), {
+        changeHash : false,
+        role       : 'dialog'
+    });
+});
 
 function showpage(id){
     $(".page").hide();

@@ -66,7 +66,7 @@
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a onclick=showpage("#profile") data-icon="user">Profile</a></li>
 			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
 		</div>
@@ -105,7 +105,7 @@
 
 	<!-- newpost -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
@@ -114,9 +114,31 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
+	            <button value="Reply" data-icon="edit">
 	        </div>
 	    </form>
+
+	</div><!-- /newpost -->
+
+	<!-- newpost -->
+	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
+
+	    <form id="frm1" action="#">
+	        <div style="padding:10px 20px;">
+	            <h3>How can you help?</h3>
+	            <label for="reply" class="ui-hidden-accessible">Password:</label>
+				<input type="text" id="reply" placeholder="Post to connect">
+	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+
+	        </div>
+	    </form>
+	<script type="text/javascript">
+	function testFunction(){
+		var x = document.getElementById("frm1");
+		console.log(x.elements[0].value)
+		$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
+		localStorage.setItem('htmlsave', $('#rectangle').html());
+	}</script>
 
 	</div><!-- /newpost -->
 
@@ -165,10 +187,22 @@
 			<br>
 			<div id="center">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
 				<p>#grounded</p>
-				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="#popupComment" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
 				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
 			</div>
 			<br>
+			Replies:
+			<div id="reply">
+			<table border="1" style="width:100%">
+			
+					<tr>
+					<td>
+						test
+					</td>
+					</tr>
+			
+		</table>
+		</div>
 		</div>
 
 		<div>
@@ -182,6 +216,7 @@
 				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 			</div>
 			<br>
+			<div id="reply"></div>
 		</div>
 
 		<div>
