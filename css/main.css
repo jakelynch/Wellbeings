@@ -82,9 +82,17 @@ html {
     top: 50%; left: 0; bottom: 0; right: 0;
 }
 
+.active {
+       background:#ccc url(path/to/image/marker.png) center bottom no-repeat; 
+}
+
+
 #center {
+
     text-align:center;
 }
+
+
 
 /*
  * Remove text-shadow in selection highlight:
