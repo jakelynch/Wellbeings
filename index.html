@@ -66,7 +66,7 @@
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a onclick=showpage("#profile") data-icon="user">Profile</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
 			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
 		</div>
@@ -114,7 +114,7 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button value="Reply" data-icon="edit">
+	            <button value="Reply" data-icon="edit"></button>
 	        </div>
 	    </form>
 
@@ -350,13 +350,122 @@
 		</div>
 
 	</div><!-- /Home - Connections Feed Thread -->
-
+</div>
 <!-- HOME PAGE THREAD (2/2): CONNECTION FEED -->
 
 
 <!-- PROFILE PAGE -->
-	<div class="page" id="profile">
+<div data-role="page" id="profile">
+		<div data-role="header" data-position = "fixed">
+		<div id="logo">
+		<img src="img/Logo.png" id="logo_img" text-align="center">
+		<p id="logo_sub">Socially Sincere Support</p>
+		<br>
+	</div>
+		<div data-role="navbar">
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a onclick=showpage("#profile") data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
+		</ul>
+		</div>
+	</div>
+	<!-- /HEADER -->
 	
+	<!-- MENU -->
+	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+	    <ul>
+            <li class="ui-btn">
+            	<img src="img/connections.png" width="50" height="50">
+            	<p>Connections</p>
+            </li>
+            
+            <li class = "ui-btn">
+            	<img src="img/surf.png" width = "50" height = "50">
+                <div data-role="collapsible">
+	                	
+					    <h5>Categories</h5>
+				    	<p class="ui-btn">Relationship</p>
+				    	<p class="ui-btn">School</p>
+				    	<p class="ui-btn">Family</p>
+				    	<p class="ui-btn">Homework</p>
+				    	<p class="ui-btn">SAT</p>
+				    	<p class="ui-btn">Depression</p>
+				</div>
+            </li>
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
+            <li><a class="ui-btn" href="#login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
+            <li><a class="ui-btn" href="#popupBug" data-rel="popup" data-position-to="window" data-inline="true" data-theme="a" data-transition="pop"><img src = "img/bugReport.png" width = "30" height = "30"> Report Bug</a></li>
+        </ul>
+	</div><!-- /MENU -->
+
+
+
+
+	<!-- newpost -->
+	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>What do you need help with?</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+	            
+	            <button value="Reply" data-icon="edit"></button>
+	        </div>
+	    </form>
+
+	</div><!-- /newpost -->
+
+	<!-- newpost -->
+	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
+
+	    <form id="frm1" action="#">
+	        <div style="padding:10px 20px;">
+	            <h3>How can you help?</h3>
+	            <label for="reply" class="ui-hidden-accessible">Password:</label>
+				<input type="text" id="reply" placeholder="Post to connect">
+	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+
+	        </div>
+	    </form>
+	<script type="text/javascript">
+	function testFunction(){
+		var x = document.getElementById("frm1");
+		console.log(x.elements[0].value)
+		$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
+		localStorage.setItem('htmlsave', $('#rectangle').html());
+	}</script>
+
+	</div><!-- /newpost -->
+
+	<!-- report bug -->
+	<div data-role="popup" id="popupBug" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>Sorry about that...</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Location" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Please describe the bug"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div><!-- report bug -->
+
+	<!-- footer -->
+	<div data-role ="footer">
+		<div data-role="navbar">
+			<ul>
+				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
+				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
+		</div>
+	</div>
 	
 
 	<!-- PROFILE PAGE content -->
@@ -371,8 +480,8 @@
 
 
 
-	</div>
-</div><!-- /PROFILE PAGE -->
+</div>
+<!-- /PROFILE PAGE -->
 
 
 </body>
