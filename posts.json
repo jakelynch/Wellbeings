@@ -1,0 +1,20 @@
+{
+    "name": "Store Posts and Replys",
+    
+    "posts": [ 
+        
+        {
+            "type": "post"
+            "user": "alibaba"
+            "id":1,
+            "content": "The Flash!"
+        },
+
+        {
+            "type": "post"
+            "user": "Alica"
+            "id":2,
+            "content": "Homework sucks!"
+        },
+    ]
+}
