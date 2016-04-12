@@ -67,15 +67,20 @@
 	<!-- HEADER -->
 	<div data-role="header" data-position = "fixed">
 		<div id="logo">
-		<img src="img/Logo.png" id="logo_img" text-align="center">
-		<p id="logo_sub">Socially Sincere Support</p>
-	</div>
+
+			<img src="img/Logo.png" id="logo_img" text-align="center">
+			<p id="logo_sub">Socially Sincere Support</p>
+			<br>
+		</div>
+
 		<div data-role="navbar">
+
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
 			<li> <a href="#profile" data-icon="user">Profile</a></li>
 			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
+
 		</div>
 	</div>
 	<!-- /HEADER -->
@@ -112,8 +117,8 @@
 
 	<!-- newpost -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-
-	    <form>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+	    <form id="frm0" action="#">
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
 	            <label for="un" class="ui-hidden-accessible">Username:</label>
@@ -121,12 +126,62 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button type="submit" data-theme="e" data-icon="edit">Post</button>
+
+	            <button value="Reply" data-icon="edit" onClick=testFunc();></button>
+	        </div>
+	    </form>
+		<script type="text/javascript">
+		function testFunc(){
+			var x = document.getElementById("frm0");
+			alert(x.elements[0].value)
+
+			$("#aroundyou").prepend('<div><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p> '+ x.elements[0].value+' </p></h4><br><div id="center"> '+ x.elements[1].value +	' <a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div>')
+
+			localStorage.setItem('postsave', $('#aroundyou').html());
+		}
+		</script>
+
+	</div><!-- /newpost -->
+
+	<!-- newpost -->
+	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
+
+	    <form id="frm1" action="#">
+	        <div style="padding:10px 20px;">
+	            <h3>How can you help?</h3>
+	            <label for="reply" class="ui-hidden-accessible">Password:</label>
+				<input type="text" id="reply" placeholder="Post to connect">
+	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+
 	        </div>
 	    </form>
 
-	</div>
-	<!-- /newpost -->
+		<script type="text/javascript">
+		function testFunction(){
+			var x = document.getElementById("frm1");
+			console.log(x.elements[0].value)
+
+			$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
+
+			localStorage.setItem('htmlsave', $('#reply').html());
+		}
+		</script>
+	</div><!-- /newpost -->
+
+	<!-- report bug -->
+	<div data-role="popup" id="popupBug" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>Sorry about that...</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Location" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Please describe the bug"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div><!-- report bug -->
 
 	<!-- footer -->
 	<div data-role ="footer">
@@ -175,7 +230,22 @@
 					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
 
+			</div>
+		
 
+
+		<div>
+			<br>
+			<hr width="95%" align="center">
+			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Emily C. - Breakup</p></h4>
+			<br>
+			<div id="center">My boyfriend just broke up with me over text.  What a jerk!</p>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+			</div>
+			<br>
+		</div>
 
 				<hr width="95%" align="center">
 				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -220,7 +290,7 @@
 					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
 			</div>
-		</div>
+		
 
 
 	<!--Home: Connection Feed Thread-->
@@ -234,8 +304,10 @@
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
 				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
+		</div>
 
 
+		<div>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp; Anonymous - Depression</p></h4>
@@ -245,8 +317,9 @@
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
 				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
+		</div>
 
-
+		<div>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp; Peter - Laid off</p></h4>
@@ -256,8 +329,9 @@
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
 				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
+		</div>
 
-
+		<div>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp; Emily C. - Breakup</p></h4>
@@ -267,7 +341,8 @@
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
 				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		
+		</div>
+		<div>
 		
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -278,7 +353,8 @@
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
 				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		
+		</div>
+		<div>
 		
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -298,20 +374,26 @@
 
 
 <!-- PROFILE PAGE -->
+
 <div data-role="page" id="profile">
 		<div data-role="header" data-position = "fixed">
 		<div id="logo">
 		<img src="img/Logo.png" id="logo_img" text-align="center">
 		<p id="logo_sub">Socially Sincere Support</p>
+
+		<br>
 	</div>
 		<div data-role="navbar">
 		<ul>
 			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+
 			<li> <a href= "#profile" data-icon="user">Profile</a></li>
+
 			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 		</ul>
 		</div>
 	</div>
+<!-- <<<<<<< HEAD
 
 	<div background = "black" class="ui-btn" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
@@ -331,6 +413,13 @@
             
             </li>
             
+======= -->
+	<!-- /HEADER -->
+	
+	<!-- MENU -->
+	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+	    <ul>
+
             <li class="ui-btn">
             	<img src="img/connections.png" width="50" height="50">
             	<p>Connections</p>
@@ -349,11 +438,57 @@
 				    	<p class="ui-btn">Depression</p>
 				</div>
             </li>
-	</div>
-	<!-- /newpost -->
+
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
+            <li><a class="ui-btn" href="#login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
+            <li><a class="ui-btn" href="#popupBug" data-rel="popup" data-position-to="window" data-inline="true" data-theme="a" data-transition="pop"><img src = "img/bugReport.png" width = "30" height = "30"> Report Bug</a></li>
+        </ul>
+	</div><!-- /MENU -->
+
+
+
+
+	<!-- newpost -->
+	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>What do you need help with?</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+	            
+	            <button value="Reply" data-icon="edit"></button>
+	        </div>
+	    </form>
+
+	</div><!-- /newpost -->
+
+	<!-- newpost -->
+	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
+
+	    <form id="frm1" action="#">
+	        <div style="padding:10px 20px;">
+	            <h3>How can you help?</h3>
+	            <label for="reply" class="ui-hidden-accessible">Password:</label>
+				<input type="text" id="reply" placeholder="Post to connect">
+	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+
+	        </div>
+	    </form>
+	<script type="text/javascript">
+	function testFunction(){
+		var x = document.getElementById("frm1");
+		console.log(x.elements[0].value)
+		$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
+		localStorage.setItem('htmlsave', $('#rectangle').html());
+	}</script>
+
+	</div><!-- /newpost -->
 
 	<!-- report bug -->
-	<div data-role="popup" id="popupPost" data-theme="a" class="ui-corner-all">
+	<div data-role="popup" id="popupBug" data-theme="a" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>Sorry about that...</h3>
@@ -365,6 +500,18 @@
 	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
 	        </div>
 	    </form>
+
+	</div><!-- report bug -->
+
+	<!-- footer -->
+	<div data-role ="footer">
+		<div data-role="navbar">
+			<ul>
+				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
+				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
+		</div>
 	</div>
 	
 	<!-- /footer -->
@@ -373,10 +520,12 @@
 
 <!-- PROFILE PAGE -->
 	<div data-role="main" class="wrapper" id="page_profile">
+
 		<div id="page_profile">
 			<div id="abs_Center">
 				<button>my posts</button>
 				<button>my answers</button>
+
 
 
   			</div>
@@ -394,15 +543,13 @@
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
 			<li> <a href="#home" data-icon="home">Home</a></li>
-			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
+			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
 		</ul>
 		</div>
 	</div>
 	<!-- /footer -->
-	</div>
+</div>
 
-</div>
-</div>
 <!-- /PROFILE PAGE -->
 
 
@@ -465,6 +612,7 @@
 				    	<p class="ui-btn">Depression</p>
 				</div>
             </li>
+        </ul>
 	</div>
 	<!-- /newpost -->
 
@@ -505,12 +653,23 @@
 		<ul>
 			<li> <a href="#" data-icon="search">Search</a></li>
 			<li> <a href="#home" data-icon="home">Home</a></li>
-			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a>
+			<li> <a href="#popupPost" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
 		</ul>
 		</div>
 	</div>
+</div>
 
-</div> 
+<!-- =======
+			</div>
+	  	</div>
+
+	</div> /PROFILE PAGE content
+
+
+
+</div>
+/PROFILE PAGE -->
+
 
 
 </body>
