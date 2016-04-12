@@ -33,6 +33,16 @@
 		    width: 100%;
 		}
 	</style>
+
+	<!-- To Change Connect Buttons -->
+	<script type="text/javascript"> 
+		$(document).ready(function(){ 
+		$("#noConnect1").click(function(){ 
+		$("#noConnect1").hide(); 
+		}); 
+		}); 
+	</script>
+
 </head>
 <body>
 	
@@ -201,12 +211,12 @@
 			<div id="center">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
 				<p>#grounded</p>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
-				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+				<a href="" class="center-button noConnect" id="noConnect1" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
 			<br>
 
             <div data-role="content">
-                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                <div data-role="collapsible" id="replies" data-theme="a" data-mini="true" data-content-theme="a">
                 	<h5>Replies</h5>
                 	<div id="reply">
 						<table border="1" style="width:100%">
@@ -551,8 +561,6 @@
 				<button>my posts</button>
 				<button>my answers</button>
 
-
-
   			</div>
 	  	</div>
 
@@ -644,8 +652,9 @@
 	    </form>
 	</div>
 
+	<p data-role="content" position="fixed" align="center">User's Name</p>
 	<img src="img/user-icon.png" class="user-icon">
-	<div data-role="content" class="user-icon" id="page_profile">
+	<div data-role="content" id="page_profile">
 		<div id="page_profile">
 			<div id="abs_Center">
 				<button>User's posts</button>
