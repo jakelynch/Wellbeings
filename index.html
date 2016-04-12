@@ -191,21 +191,38 @@
 	<!-- /Connetion Feed NAV for Threads -->
 
 
-	<div class="page ui-content" id="aroundyou">
+	<div class="page" id="aroundyou">
 
 
-			<div>
-				<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-				<h4><p> &nbsp; Aaron - Suspended</p></h4>
-				<p>Suspended for starting a food fight.  What am I going to tell my mom?!</p>
+					<div>
+			<br>
+			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Aaron - Suspended</p></h4>
+			<br>
+			<div id="center">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
 				<p>#grounded</p>
-				<br>
-				<div id="center"> 
-					<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+			</div>
+			<br>
+
+            <div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
-			<div>
+		</div>
+
+		<div>
 
 				<hr width="95%" align="center">
 				<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
