@@ -73,10 +73,9 @@
 		</ul>
 
 		</div>
-	</div>
-	<!-- /HEADER -->
+	</div><!-- /HEADER -->
 	
-	<!-- MENU -->
+	<!-- [panel] MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
             <li class="ui-btn">
@@ -103,7 +102,7 @@
         </ul>
 	</div><!-- /MENU -->
 
-	<!-- newpost -->
+	<!-- [popup] NEWPOST -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 	    <form id="frm0" action="#">
@@ -127,10 +126,9 @@
 			localStorage.setItem('postsave', $('#aroundyou').html());
 		}
 		</script>
+	</div><!-- /NEWPOST -->
 
-	</div><!-- /newpost -->
-
-	<!-- newpost -->
+	<!-- [popup] COMMENT -->
 	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
 
 	    <form id="frm1" action="#">
@@ -153,9 +151,9 @@
 			localStorage.setItem('htmlsave', $('#reply').html());
 		}
 		</script>
-	</div><!-- /newpost -->
+	</div><!-- /COMMENT -->
 
-	<!-- report bug -->
+	<!-- [popup] BUG -->
 	<div data-role="popup" id="popupBug" data-theme="a" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
@@ -168,19 +166,7 @@
 	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
 	        </div>
 	    </form>
-	</div><!-- report bug -->
-
-	<!-- footer -->
-	<div data-role ="footer">
-		<div data-role="navbar">
-			<ul>
-				<li> <a href="#" data-icon="search">Search</a></li>
-				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
-				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- /footer -->
+	</div><!-- /BUG -->
 
 	<!-- Connection Feed NAV for Threads -->
 	<div data-role="navbar">
@@ -191,6 +177,7 @@
 	</div><!-- Connection Feed NAV for Threads -->
 
 
+	<!-- AROUND YOU -->
 	<div class="page" id="aroundyou">
 
 		<div>
@@ -287,7 +274,7 @@
 			<br>
 		</div>
 		
-	</div>
+	</div><!-- /AROUNDYOU -->
 
 	<!--Home: Connection Feed Thread-->
 	<div class="page" id="connections">
@@ -367,6 +354,18 @@
 
 	</div><!-- /Home - Connections Feed Thread -->
 
+
+	<!-- FOOTER -->
+	<div data-role ="footer">
+		<div data-role="navbar">
+			<ul>
+				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
+				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
+		</div>
+	</div><!-- /FOOTER -->
+
 </div>
 <!-- HOME PAGE THREAD (2/2): CONNECTION FEED -->
 
@@ -374,24 +373,26 @@
 <!-- PROFILE PAGE -->
 
 <div data-role="page" id="profile">
-		<div data-role="header" data-position = "fixed">
+
+	<!-- HEADER -->
+	<div data-role="header" data-position = "fixed">
 		<div id="logo">
-		<img src="img/Logo.png" id="logo_img" text-align="center">
-		<p id="logo_sub">Socially Sincere Support</p>
-		<br>
-	</div>
-		<div data-role="navbar">
-		<ul>
-			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
-			<li> <a onclick=showpage("#profile") data-icon="user">Profile</a></li>
-			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
-		</ul>
+			<img src="img/Logo.png" id="logo_img" text-align="center">
+			<p id="logo_sub">Socially Sincere Support</p>
+			<br>
 		</div>
-	</div>
-	<!-- /HEADER -->
+		<div data-role="navbar">
+			<ul>
+				<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+				<li> <a onclick=showpage("#profile") data-icon="user">Profile</a></li>
+				<li> <a href="#mypanel2" data-icon="bars">Menus</a></li>
+			</ul>
+		</div>
+	</div><!-- /HEADER -->
 	
+
 	<!-- MENU -->
-	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+	<div class="ui-menu" data-role="panel" id="mypanel2" data-position="right" data-display="overlay">
 	    <ul>
             <li class="ui-btn">
             	<img src="img/connections.png" width="50" height="50">
@@ -413,15 +414,12 @@
             </li>
             <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
             <li><a class="ui-btn" href="#login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
-            <li><a class="ui-btn" href="#popupBug" data-rel="popup" data-position-to="window" data-inline="true" data-theme="a" data-transition="pop"><img src = "img/bugReport.png" width = "30" height = "30"> Report Bug</a></li>
+            <li><a class="ui-btn" href="#popupBug2" data-rel="popup" data-position-to="window" data-inline="true" data-theme="a" data-transition="pop"><img src = "img/bugReport.png" width = "30" height = "30"> Report Bug</a></li>
         </ul>
 	</div><!-- /MENU -->
 
-
-
-
-	<!-- newpost -->
-	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+	<!-- [popup] POST -->
+	<div data-role="popup" id="popupPost2" data-theme="a" class="ui-corner-all">
 		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 	    <form>
 	        <div style="padding:10px 20px;">
@@ -435,9 +433,9 @@
 	        </div>
 	    </form>
 
-	</div><!-- /newpost -->
+	</div><!-- /POST -->
 
-	<!-- newpost -->
+	<!-- [popup] COMMENT -->
 	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
 
 	    <form id="frm1" action="#">
@@ -449,18 +447,21 @@
 
 	        </div>
 	    </form>
-	<script type="text/javascript">
-	function testFunction(){
-		var x = document.getElementById("frm1");
-		console.log(x.elements[0].value)
-		$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
-		localStorage.setItem('htmlsave', $('#rectangle').html());
-	}</script>
 
-	</div><!-- /newpost -->
+		<script type="text/javascript">
+			function testFunction(){
+				var x = document.getElementById("frm1");
+				console.log(x.elements[0].value);
 
-	<!-- report bug -->
-	<div data-role="popup" id="popupBug" data-theme="a" class="ui-corner-all">
+				$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
+
+				localStorage.setItem('htmlsave', $('#rectangle').html());
+			}
+		</script>
+	</div><!-- /COMMENT -->
+
+	<!-- [popup] BUG -->
+	<div data-role="popup" id="popupBug2" data-theme="a" class="ui-corner-all">
 	    <form>
 	        <div style="padding:10px 20px;">
 	            <h3>Sorry about that...</h3>
@@ -472,19 +473,7 @@
 	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
 	        </div>
 	    </form>
-	</div><!-- report bug -->
-
-	<!-- footer -->
-	<div data-role ="footer">
-		<div data-role="navbar">
-			<ul>
-				<li> <a href="#" data-icon="search">Search</a></li>
-				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
-				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
-			</ul>
-		</div>
-	</div>
-	
+	</div><!-- /BUG -->
 
 	<!-- PROFILE PAGE content -->
 	<div data-role="main" class="wrapper" id="page_profile">
@@ -498,13 +487,19 @@
 
 	</div> <!-- /PROFILE PAGE content -->
 
-
+	<!-- FOOTER -->
+	<div data-role ="footer">
+		<div data-role="navbar">
+			<ul>
+				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
+				<li> <a href="#popupPost2" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
+		</div>
+	</div><!-- /FOOTER -->
 
 </div>
 <!-- /PROFILE PAGE -->
 
-
-
 </body>
-
 </html>
