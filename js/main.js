@@ -1,18 +1,18 @@
-$(document).ready(function() {
-	if (localStorage.getItem("session") != null) {
-	    showpage(#home);
-	}
-	else {
-		showpage(#login);
-	}
+// $(document).ready(function() {
+// 	if (localStorage.getItem("session") != null) {
+// 	    showpage("#home");
+// 	}						
+// 	else {
+// 		showpage("#login");
+// 	}
 
-	$(".connections").hide();	
+// 	$("#connections").hide();	
 
-	// $("#feed").click(function () {
-	// 	var id = $(this).innerhtml;
-	// 	showpage("#" + id);
-	// });
-}
+// 	// $("#feed").click(function () {
+// 	// 	var id = $(this).innerhtml;
+// 	// 	showpage("#" + id);
+// 	// });
+// })
 
 
 function showpage(id){
