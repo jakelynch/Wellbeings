@@ -47,6 +47,15 @@ html {
 
 }
 
+.user-icon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -150px;
+}
+}
+
 #logo_sub{
     text-align: center;
     margin-left: 0 auto;
