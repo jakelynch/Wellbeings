@@ -10,6 +10,27 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+.noConnect {
+
+}
+
+.yesConnect {
+    background-color: #4CAF50!important;
+    box-shadow: none !important;
+    text-shadow:none !important;
+
+}
+
+.user-icon {
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 30%; right: 0;
+    padding-bottom:20px;
+}
+
 html {
     color: #222;
     font-size: 1em;
