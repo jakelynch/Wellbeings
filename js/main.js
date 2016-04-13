@@ -34,10 +34,6 @@ $(document).delegate('#my-dialog-button', 'click', function () {
     });
 });
 
-$('.noConnect').toggle(function(){
-    $(this).hide();
-});
-
 function showpage(id){
     $(".page").hide();
     $(id).show();

@@ -102,11 +102,6 @@ html {
     text-align:center;
 }
 
-.connectBtn {
-    background-color:#FFFFFF;
-    border: 1px solid #132b14;
-    color:#132b14;
-}
 
 
 
@@ -453,4 +448,14 @@ html, body {
     height: 142px; /* .push must be the same height as .footer */
 }
 
+.noConnect {
+
+}
+
+.yesConnect {
+    background-color: #4CAF50!important;
+    box-shadow: none !important;
+    text-shadow:none !important;
+
+}
 

@@ -5,12 +5,15 @@
 	<title>Well-Beings</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="css/main.css"/>
+	
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="css/main.css"/>
+	
 
 	<style> 
 		input[type=text] 
@@ -36,11 +39,22 @@
 
 	<!-- To Change Connect Buttons -->
 	<script type="text/javascript"> 
-		$(document).ready(function(){ 
-		$("#noConnect1").click(function(){ 
-		$("#noConnect1").hide(); 
-		}); 
-		}); 
+
+		$(document).ready(function(){
+			$('.connect-btn').on('click', function(){
+				var btn=$(this);
+				console.log(btn.attr('class'));
+				if(btn.hasClass('noConnect')){
+					btn.removeClass('noConnect').addClass('yesConnect');
+					console.log("noConnect");
+				}
+				else{
+					btn.removeClass('yesConnect').addClass('noConnect');
+					console.log("yesConnect");
+				}
+			})
+		});
+
 	</script>
 
 </head>
@@ -208,10 +222,10 @@
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp;&nbsp; Aaron - Suspended</p></h4>
 			<br>
-			<div id="center">Suspended for starting a food fight.  What am I going to tell my mom?!</p>
+			<div id="center"><p>Suspended for starting a food fight.  What am I going to tell my mom?!</p>
 				<p>#grounded</p>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
-				<a href="" class="center-button noConnect" id="noConnect1" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
 			<br>
 
@@ -231,8 +245,6 @@
 			</div>
 		</div>
 
-		<div>
-
 				<hr width="95%" align="center">
 				<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 				<h4><p> &nbsp; Emily C. - Breakup</p></h4>
@@ -240,23 +252,10 @@
 				<br>
 				<div id="center"> 
 					<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+					<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
 
-			</div>
-
-			<div>
 				<br>
-				<hr width="95%" align="center">
-				<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-				<h4><p> &nbsp;&nbsp; Emily C. - Breakup</p></h4>
-				<br>
-				<div>My boyfriend just broke up with me over text.  What a jerk!</p>
-					<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
-					<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
-				</div>
-				<br>
-
 				<hr width="95%" align="center">
 				<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 				<h4><p> &nbsp; Anonymous - Depressed</p></h4>
@@ -264,7 +263,7 @@
 				<br>
 				<div id="center"> 
 					<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+					<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
 				<br>
 
@@ -276,7 +275,7 @@
 				<br>
 				<div id="center"> 
 					<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+					<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
 				<br>
 
@@ -288,7 +287,7 @@
 				<br>
 				<div id="center"> 
 					<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+					<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
 
 
@@ -299,15 +298,13 @@
 				<br>
 				<div id="center"> 
 					<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-					<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+					<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 				</div>
-		</div>
 	</div>
 		
 
 	<!--Home: Connection Feed Thread-->
-	<div class="page u" id="connections">
-		<div>
+	<div class="page" id="connections">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -316,12 +313,10 @@
 			<br>
 			<div id="center"> 
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		</div>
 
 
-		<div>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp; Anonymous - Depression</p></h4>
@@ -329,11 +324,11 @@
 			<br>
 			<div id="center"> 
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		</div>
 
-		<div>
+
+
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp; Peter - Laid off</p></h4>
@@ -341,11 +336,11 @@
 			<br>
 			<div id="center"> 
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		</div>
 
-		<div>
+
+
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp; Emily C. - Breakup</p></h4>
@@ -353,10 +348,9 @@
 			<br>
 			<div id="center"> 
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		</div>
-		<div>
+
 		
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -365,10 +359,9 @@
 			<br>
 			<div id="center"> 
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		</div>
-		<div>
+
 		
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -378,10 +371,8 @@
 			<br>
 			<div id="center"> 
 				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Connect</a>
+				<a href="" class="connect-btn center-button noConnect"data-role="button" data-inline="true" data-mini="true">Connect</a>
 			</div>
-		</div>
-
 	</div><!-- /Home - Connections Feed Thread -->
 
 
@@ -397,6 +388,7 @@
 	</div><!-- /FOOTER -->
 
 
+	</div>
 </div>
 <!-- HOME PAGE THREAD (2/2): CONNECTION FEED -->
 
