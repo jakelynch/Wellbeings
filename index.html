@@ -371,12 +371,42 @@
 	<div data-role ="footer">
 		<div data-role="navbar">
 			<ul>
-				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a href= "#myPopupDialog" data-icon="search" data-rel = "popup">Search</a></li>				
 				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
 				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
 			</ul>
 		</div>
-	</div><!-- /FOOTER -->
+	</div>
+	<!-- /FOOTER -->
+
+<!--     <div data-role="popup" id="myPopup" class="ui-content" data-theme = "b" data-overlay-theme = "b">
+    	<p>Pop Up</p>
+    </div>	 -->
+    
+    <div data-role="popup" id="myPopupDialog" class="ui-content" data-theme = "a" data-overlay-theme = "b" data-transition="slidedown" data-position-to="window">
+
+	    <div data-role="search" class="ui-content">
+	    	<h2>Search</h2>
+	    	<p>Topic, Posts, Users...</p>
+			
+			<div data-role="search" class="ui-content">
+				<form method="post" action="demoform.asp">
+				  	<div class="ui-field-contain">
+				    	<input type="search" name="search" id="search" placeholder="i.e. I need help for...">
+				  </div>
+				  
+				  <a href="#" data-inline = "true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+
+				  <input type="submit" data-inline="true" value="Submit" data-icon = "search">
+				</form> 
+			</div>
+	    	
+	    </div>
+
+    </div>    
+
+
+
 
 </div>
 <!-- HOME PAGE THREAD (2/2): CONNECTION FEED -->
@@ -499,15 +529,46 @@
 
 	</div> <!-- /PROFILE PAGE content -->
 
+
 	<!-- FOOTER -->
+
+
 	<div data-role ="footer">
 		<div data-role="navbar">
 			<ul>
-				<li> <a href="#" data-icon="search">Search</a></li>
+				<li> <a href= "#ProfileSearch" data-icon="search" data-rel = "popup">Search</a></li>				
 				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
-				<li> <a href="#popupPost2" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
 			</ul>
 		</div>
+	</div>
+	<!-- /FOOTER -->
+
+<!--     <div data-role="popup" id="myPopup" class="ui-content" data-theme = "b" data-overlay-theme = "b">
+    	<p>Pop Up</p>
+    </div>	 -->
+    
+    <div data-role="popup" id="ProfileSearch" class="ui-content" data-theme = "a" data-overlay-theme = "b" data-transition="slidedown" data-position-to="window">
+
+	    <div data-role="search" class="ui-content">
+	    	<h2>Search</h2>
+	    	<p>Topic, Posts, Users...</p>
+			
+			<div data-role="search" class="ui-content">
+				<form method="post" action="demoform.asp">
+				  	<div class="ui-field-contain">
+				    	<input type="search" name="search" id="search" placeholder="i.e. I need help for...">
+				  </div>
+				  
+				  <a href="#" data-inline = "true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+
+				  <input type="submit" data-inline="true" value="Submit" data-icon = "search">
+				</form> 
+			</div>
+	    	
+	    </div>   
+
+
 	</div><!-- /FOOTER -->
 
 </div>
