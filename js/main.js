@@ -1,3 +1,5 @@
+var html;
+
 $(document).ready(function() {
 		if (localStorage.getItem('htmlsave')){
 		var htmlstore = localStorage.getItem('htmlsave')
@@ -45,6 +47,16 @@ function showpage(id){
     if (id == '.connections') {
     	$('#aroundyou').hide();
     }
+
+    if (id == "#search")
+    {
+        search_page();
+    }
+}
+});
+
+function search_page(keyWord)
+{
+
 }
 
-});
