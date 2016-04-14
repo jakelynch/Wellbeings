@@ -1,9 +1,13 @@
 var html;
 
+$(document).onload(function(){
+    localStorage.clear();
+})
 $(document).ready(function() {
-		if (localStorage.getItem('htmlsave')){
+    var id=0;
+	if (localStorage.getItem('htmlsave')){
 		var htmlstore = localStorage.getItem('htmlsave')
-		$('#reply').html(htmlstore);
+		$('#reply1').html(htmlstore);
 
 	}
     if (localStorage.getItem('postsave')){

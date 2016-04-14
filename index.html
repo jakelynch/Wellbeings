@@ -32,6 +32,7 @@
 		    width: 100%;
 		}
 	</style>
+
 </head>
 <body>
 	
@@ -55,7 +56,14 @@
 
 <!-- HOME PAGE THREAD (1/2): NEARBY FEED -->
 <div data-role="page" id ="home">
-	
+	<script>
+		var id = 0;
+		function setid(idnum){
+			id=idnum
+			alert(id);
+			return id
+		}
+	</script>
 	<!-- HEADER -->
 	<div data-role="header" data-position = "fixed">
 		<div id="logo">
@@ -113,15 +121,14 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button value="Reply" data-icon="edit" onClick=testFunc();></button>
+	            <button value="Reply" data-icon="edit" onClick=testFunc();>Submit</button>
 	        </div>
 	    </form>
 		<script type="text/javascript">
 		function testFunc(){
 			var x = document.getElementById("frm0");
-			alert(x.elements[0].value)
 
-			$("#aroundyou").prepend('<div><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p> '+ x.elements[0].value+' </p></h4><br><div id="center"> '+ x.elements[1].value +	' <a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div>')
+			$("#aroundyou").prepend('<div><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p> '+ x.elements[0].value+' </p><</h4><br><div id="center"> '+ x.elements[1].value +	' <br><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div>');
 
 			localStorage.setItem('postsave', $('#aroundyou').html());
 		}
@@ -130,7 +137,7 @@
 
 	<!-- [popup] COMMENT -->
 	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
-
+		
 	    <form id="frm1" action="#">
 	        <div style="padding:10px 20px;">
 	            <h3>How can you help?</h3>
@@ -144,10 +151,9 @@
 		<script type="text/javascript">
 		function testFunction(){
 			var x = document.getElementById("frm1");
-			console.log(x.elements[0].value)
-
-			$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>')
-
+			console.log(x.elements[0].value);
+				
+			$("#reply"+).append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
 			localStorage.setItem('htmlsave', $('#reply').html());
 		}
 		</script>
@@ -180,7 +186,7 @@
 	<!-- AROUND YOU -->
 	<div class="page" id="aroundyou">
 
-		<div>
+		<div class="reply" id="1">
 			<br>
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp;&nbsp; Aaron - Work</p></h4>
@@ -189,7 +195,7 @@
 				<br>
 				<p>I'm not even saying it's unfair... but how do I rationalize it? How do I keep going?</p>
 				<br>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop";>Reply</a>
 				<a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
 			</div>
 
@@ -210,7 +216,7 @@
 		</div>
 
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -224,7 +230,7 @@
 			<br>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -238,7 +244,7 @@
 			<br>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -252,7 +258,7 @@
 			<br>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -266,7 +272,7 @@
 			<br>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -285,7 +291,7 @@
 	<!--Home: Connection Feed Thread-->
 	<div class="page" id="connections">
 		
-		<div>
+		<div class="reply">
 			<br>
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp;&nbsp; Lauren - Existential</p></h4>
@@ -299,7 +305,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
 			<h4><p> &nbsp;&nbsp; Anonymous - Depression</p></h4>
@@ -311,7 +317,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -324,7 +330,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -337,7 +343,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -351,7 +357,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div class="reply">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
