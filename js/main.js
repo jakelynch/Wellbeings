@@ -1,9 +1,8 @@
 var html;
 
-$(document).onload(function(){
-    localStorage.clear();
-})
+
 $(document).ready(function() {
+    // localStorage.clear();
     var id=0;
 	if (localStorage.getItem('htmlsave')){
 		var htmlstore = localStorage.getItem('htmlsave')
@@ -12,24 +11,15 @@ $(document).ready(function() {
 	}
     if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
-        $('#aroundyou').html(postsave);
-        
-    }
-// 	if (localStorage.getItem("session") != null) {
-// 	    showpage("#home");
-// 	}						
-// 	else {
-// 		showpage("#login");
-// 	}
+        $('#aroundyou').html(postsave)};
+    $(".reply").click(function(){
+    alert(this.id);
+    myid = this.id;
+});       
+    
+});
 
-// 	$("#connections").hide();	
 
-// 	// $("#feed").click(function () {
-// 	// 	var id = $(this).innerhtml;
-// 	// 	showpage("#" + id);
-// 	// });
-// })
-})
 
 $(document).delegate('#my-dialog-button', 'click', function () {
 
