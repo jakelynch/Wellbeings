@@ -1,8 +1,10 @@
+
 var html;
 
 
 $(document).ready(function() {
     // localStorage.clear();
+
     var id=0;
 	if (localStorage.getItem('htmlsave')){
 		var htmlstore = localStorage.getItem('htmlsave')
@@ -11,7 +13,7 @@ $(document).ready(function() {
 	}
     if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
-        $('#aroundyou').html(postsave)};
+        $('#aroundyou').prepend(postsave)};
     $(".reply").click(function(){
     alert(this.id);
     myid = this.id;
@@ -52,3 +54,4 @@ function search_page(keyWord)
 {
 
 }
+
