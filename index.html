@@ -432,25 +432,30 @@
     </div>	 -->
     
     <div data-role="popup" id="myPopupDialog" class="ui-content" data-theme = "a" data-overlay-theme = "b" data-transition="slidedown" data-position-to="window">
-
 	    <div data-role="search" class="ui-content">
 	    	<h2>Search</h2>
 	    	<p>Topic, Posts, Users...</p>
 			
 			<div data-role="search" class="ui-content">
-				<form method="post" action="demoform.asp">
-				  	<div class="ui-field-contain">
-				    	<input type="search" name="search" id="search" placeholder="i.e. I need help for...">
-				  </div>
-				  
+				<form method="post" action="demoform.asp" class="ui-filterable">
+				<!-- <form  class="ui-filterable"> -->
+				  	<!-- <div class="ui-field-contain"> -->
+				    	<input type="search" name="search" id="filterBasic-input" placeholder="i.e. I need help for..." data-type = "search">
+				    	<!-- <input id = "filterBasic-input" data-type = "search"> -->
+				  	<!-- </div>				   -->
 				  <a href="#" data-inline = "true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
-
 				  <input type="submit" data-inline="true" value="Submit" data-icon = "search">
-				</form> 
-			</div>
-	    	
-	    </div>
+				</form>
 
+				<ul data-role="listview" data-filter="true" data-input="#filterBasic-input">
+				    <li>Depression</li>
+				    <li>Worry</li>
+				    <li>Study</li>
+				    <li>Fate</li>
+				    <li>Relationship</li>
+				</ul>
+			</div>    	
+	    </div>
     </div>    
 
 
