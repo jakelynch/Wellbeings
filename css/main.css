@@ -41,6 +41,11 @@ html {
     padding-bottom: 60px;
 }
 
+[data-role=search]
+{
+    text-align: center;
+}
+
 [data-role=footer] {
     bottom:0; 
     position:fixed !important; 
