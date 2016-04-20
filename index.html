@@ -125,7 +125,7 @@
 
 	<!-- [popup] NEWPOST -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+		<a href="#home" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
 	    <form id="frm0" action="#home">
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
@@ -134,7 +134,7 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button value="Submit" data-icon="edit" onClick=testFunc();>Submit</button>
+	            <button value="Submit" data-icon="edit" onClick='testFunc();location.reload();'>Submit</button>
 	        </div>
 	    </form>
 		<script type="text/javascript">
@@ -143,10 +143,13 @@
 
 
 
-			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
+			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
+
 
 
 			localStorage.setItem('postsave', $('.reply1').html());
+
+			location.href="#home";	
 		}
 		</script>
 	</div><!-- /NEWPOST -->
