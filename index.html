@@ -30,32 +30,26 @@
 	</style>
 
 
-
 	<!-- To Change Connect Buttons -->
         <script type="text/javascript">
 
                 $(document).ready(function(){
-                    $('.connect-btn').on('click', function()
-                    {
-                        var btn=$(this);
-                        previousConClass = localStorage['noConnectClass'];
-						if (previousConClass) $('noConnect').addClass(previousConClass);
-                        
-                        //console.log(btn.attr('class'));
 
-                            if(btn.hasClass('noConnect'))
-                            {
-                            	btn.removeClass('noConnect').addClass('yesConnect');
-                                console.log("noConnect");
-                                localStorage['noConnect'] = 'yesConnect';
-                            }
-                            else{
-                                btn.removeClass('yesConnect').addClass('noConnect');
-                                console.log("yesConnect");
-                            }
+                        $('.connect-btn').on('click', function(){
+                                var btn=$(this);
+                                console.log(btn.attr('class'));
+                                if(btn.hasClass('noConnect')){
+                                        btn.removeClass('noConnect').addClass('yesConnect');
+                                        console.log("noConnect");
+                                }
+
+                                else{
+                                        btn.removeClass('yesConnect').addClass('noConnect');
+                                        console.log("yesConnect");
+                                }
                         })
                 });
-
+        var myid =0
         </script>
 </head>
 <body>
@@ -70,7 +64,7 @@
 	</div>
 
 	<div id="abs_Center">
-		<a class="ui-btn" href="#home">Log In</a>
+		<a class="ui-btn" id="login-btn" href="#home">Log In</a>
 		<a class="ui-btn" href="#home">Sign Up!</a>
 	</div>
 
@@ -110,11 +104,6 @@
 	<!-- [panel] MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
 	    <ul>
-            <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
-            	<p>Connections</p>
-            </li>
-            
             <li class = "ui-btn">
             	<img src="img/surf.png" width = "50" height = "50">
                 <div data-role="collapsible">
@@ -137,7 +126,7 @@
 	<!-- [popup] NEWPOST -->
 	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
 		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
-	    <form id="frm0" action="#">
+	    <form id="frm0" action="#home">
 	        <div style="padding:10px 20px;">
 	            <h3>What do you need help with?</h3>
 	            <label for="un" class="ui-hidden-accessible">Username:</label>
@@ -145,7 +134,7 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button value="Reply" data-icon="edit" onClick=testFunc();>Submit</button>
+	            <button value="Submit" data-icon="edit" onClick=testFunc();>Submit</button>
 	        </div>
 	    </form>
 		<script type="text/javascript">
@@ -154,10 +143,10 @@
 
 
 
-			$("#aroundyou").prepend('<div><br><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value+' </p></h4><br><div id="center"> '+ x.elements[1].value +	' <br><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div></div>')
+			$("#aroundyou").prepend('<div class="reply129" id = "129129391"><br><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value+' </p></h4><br><div id="center"> '+ x.elements[1].value +	' <br><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div></div>')
 
 
-			localStorage.setItem('postsave', $('#aroundyou').html());
+			localStorage.setItem('postsave', $('.reply129').html());
 		}
 		</script>
 	</div><!-- /NEWPOST -->
@@ -165,12 +154,12 @@
 	<!-- [popup] COMMENT -->
 	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
 		
-	    <form id="frm1" action="#">
+	    <form id="frm1" action="#home">
 	        <div style="padding:10px 20px;">
 	            <h3>How can you help?</h3>
 	            <label for="reply" class="ui-hidden-accessible">Password:</label>
 				<input type="text" id="reply" placeholder="Post to connect">
-	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+	            <button type="reply" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
 
 	        </div>
 	    </form>
@@ -179,6 +168,8 @@
 		function testFunction(){
 			var x = document.getElementById("frm1");
 			console.log(x.elements[0].value);
+			console.log("hi");
+			alert("error");
 				
 			$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
 			localStorage.setItem('htmlsave', $('#reply').html());
@@ -223,14 +214,15 @@
 				<p>I'm not even saying it's unfair... but how do I rationalize it? How do I keep going?</p>
 				<br>
 
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
 			</div>
 
             <div data-role="content">
                 <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
                 	<h5>Replies</h5>
-                	<div id="reply">
+                	<div id="reply1">
 						<table border="1" style="width:100%">
 							<tr>
 								<td>
@@ -244,7 +236,7 @@
 		</div>
 
 
-		<div class="reply">
+		<div class="reply" id="2">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -252,13 +244,28 @@
 			<br>
 			<div id="center">3 years with my boyfriend but recently we've felt distant. I think I love him and I know the fire won't always be there but when should you consider ending a relationship just for lack of connection?</p>
 				<br>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 			</div>
 			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply2">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="reply">
+		<div class="reply" id="3">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -266,13 +273,31 @@
 			<br>
 			<div id="center"> <p>I've always had a sort of nagging case of mild depression. Every now and then for seemingly no reason I'll lack the motivation to do even the littlest things like brushing my teeth. I'm not actually sad about anything and I don't want to start taking meds - has anyone out there been able to overcome something like this?</p>
 				<br>
-				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 			</div>
 			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply3">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		
 		</div>
 
-		<div class="reply">
+		<div class="reply" id="4">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -280,13 +305,30 @@
 			<br>
 			<div id="center">My girlfriend struggles with an eating disorder and I can't take it anymore. I've tried to be as supportive as possible but she has no drive to address it. The only thing keeping me from ending things is that I feel like I'd be a terrible person for doing that to her... Any suggestions?</p>
 				<br>
-				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
 			</div>
 			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply4">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="reply">
+		<div class="reply" id="4a">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -294,13 +336,29 @@
 			<br>
 			<div id="center">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
 				<br>
-				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
 			</div>
-			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply4a">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="reply">
+		<div class="reply" id="5">
 			<br>
 			<hr width="95%" align="center">
 			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
@@ -308,16 +366,37 @@
 			<br>
 			<div id="center">My boyfriend and I are about to get kicked out of our place and with our current situation it looks like we'll have nowhere to go. I know it will only be temporary but we're not sure what to do in the meantime... any advice would be greatly appreciated.</p>
 				<br>
-				<a href="index.html" data-role="button" data-inline="true" data-mini="true">Reply</a>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
 			</div>
 			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply5">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		
 		</div>
 		
 	</div><!-- /AROUNDYOU -->
 
 	<!--Home: Connection Feed Thread-->
 	<div class="page" id="connections">
+
+		
+
 
 		<script type="text/javascript">
 
@@ -334,84 +413,7 @@
 		<hr width="95%" align="center">
         <p id="emptynotification"> <br>Press 'Connect' in AroundYou build Connections! <br></p>
 
-		<!-- <div class="reply">
-			<br>
-			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-			<h4><p> &nbsp;&nbsp; Lauren - Existential</p></h4>
-			<br>
-			<p>&nbsp; I couldn't think of anything to complain about if I tried. I've been given every opportunity to succeed, I've done very well for myself socially, academically, athletically... but here I am in my senior year in college with absolutely no direction. I feel like I have no passion for anything and don't know what to do after graduation.</p>
-			<br>
-			<div id="center"> 
-				<br>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
-			</div>
-		</div>
 
-		<div class="reply">
-			<br>
-			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-			<h4><p> &nbsp;&nbsp; Anonymous - Depression</p></h4>
-			<br>
-			<div id="center">Always feeling apathetic, don't want to socialize.  I need some help.  Anyone out there?</p>
-				<br>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
-			</div>
-		</div>
-
-		<div class="reply">
-			<br>
-			<hr width="95%" align="center">
-			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-			<h4><p> &nbsp;&nbsp; Peter - Laid off</p></h4>
-			<br>
-			<div id="center">Got laid off from company downsizing.  Was trying to save for a down payment on my house, and now am out of luck.  I don't want to worry my wife about the financial burden, but am in a bad situation.  Has anyone else been here before?</p>
-				<br>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
-			</div>
-		</div>
-
-		<div class="reply">
-			<br>
-			<hr width="95%" align="center">
-			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-			<h4><p> &nbsp;&nbsp; Natalia - Lethargy</p></h4>
-			<br>
-			<div id="center">I wake up broken and tired. I'm sleeping for 7-8 hours a night but everyday I feel like I've just pulled an allnighter... I can't think of anything that would've caused this. Any ideas? Any fixes?</p>
-				<br>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
-			</div>
-		</div>
-
-		<div class="reply">
-			<br>
-			<hr width="95%" align="center">
-			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-			<h4><p> &nbsp;&nbsp; Hillary - Injury</p></h4>
-			<br>
-			<div id="center">I've been dancing my whole life and have caused a lot of wear on my knees but have always worked through it. But today at practice my leg just gave out with a terrible pain that I've never had before. I don't think I tore anything I just feel like my knee has nothing left</p>
-			<p>How do you cope with the abrupt end of a passion like this?</p>
-				<br>
-				<a href="" data-role="button" data-inline="true" data-mini="true">Reply</a>
-				<a href="" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a>
-			</div>
-		</div>
-
-		<div class="reply">
-			<br>
-			<hr width="95%" align="center">
-			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
-			<h4><p> &nbsp;&nbsp; Aaron - Guilty</p></h4>
-			<br>
-			<div id="center">I come from a very poor part of the country, but have been lucky enough to attend a prestigious university. The problem is that the smarter I get the harder it is to go home. I hear my mom speaking ignorantly and when I try to teach her she won't listen...</p>
-				<p>Is it my responsibility to pass on what I've learned? When is it better to just let ignorance be bliss?</p>
-				<button class="ctrbtn" href="" data-inline="true" data-mini="true">Reply</button>
-				<button class="connect-btn center-button noConnect" href="" data-inline="true" data-mini="true">Connect</button>
-			</div>
-		</div> -->
 
 	</div><!-- /Home - Connections Feed Thread -->
 
@@ -433,25 +435,30 @@
     </div>	 -->
     
     <div data-role="popup" id="myPopupDialog" class="ui-content" data-theme = "a" data-overlay-theme = "b" data-transition="slidedown" data-position-to="window">
-
 	    <div data-role="search" class="ui-content">
 	    	<h2>Search</h2>
 	    	<p>Topic, Posts, Users...</p>
 			
 			<div data-role="search" class="ui-content">
-				<form method="post" action="demoform.asp">
-				  	<div class="ui-field-contain">
-				    	<input type="search" name="search" id="search" placeholder="i.e. I need help for...">
-				  </div>
-				  
+				<form method="post" action="demoform.asp" class="ui-filterable">
+				<!-- <form  class="ui-filterable"> -->
+				  	<!-- <div class="ui-field-contain"> -->
+				    	<input type="search" name="search" id="filterBasic-input" placeholder="i.e. I need help for..." data-type = "search">
+				    	<!-- <input id = "filterBasic-input" data-type = "search"> -->
+				  	<!-- </div>				   -->
 				  <a href="#" data-inline = "true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
-
 				  <input type="submit" data-inline="true" value="Submit" data-icon = "search">
-				</form> 
-			</div>
-	    	
-	    </div>
+				</form>
 
+				<ul data-role="listview" data-filter="true" data-input="#filterBasic-input">
+				    <li>Depression</li>
+				    <li>Worry</li>
+				    <li>Study</li>
+				    <li>Fate</li>
+				    <li>Relationship</li>
+				</ul>
+			</div>    	
+	    </div>
     </div>    
 
 
@@ -532,7 +539,6 @@
 	    <form id="frm1" action="#">
 	        <div style="padding:10px 20px;">
 	            <h3>How can you help?</h3>
-	            <label for="reply" class="ui-hidden-accessible">Password:</label>
 				<input type="text" id="reply" placeholder="Post to connect">
 	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
 
@@ -543,10 +549,11 @@
 			function testFunction(){
 				var x = document.getElementById("frm1");
 				console.log(x.elements[0].value);
+				alert(myid);
 
-				$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
+				$("#reply" +myid).append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
 
-				localStorage.setItem('htmlsave', $('#rectangle').html());
+				localStorage.setItem('htmlsave'+myid, $('#reply' +myid).html());
 			}
 		</script>
 	</div><!-- /COMMENT -->
