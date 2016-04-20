@@ -24,8 +24,9 @@ $(document).ready(function() {
     else{
         var idlist = [];
     }
-    if (localStorage.getItem('postsave')){
+if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
+
         $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>")};
     $(".reply").click(function(){
     // alert(this.id);
@@ -56,9 +57,14 @@ $(document).ready(function() {
                                 }
                                 console.log("this is" + idlist);
                         });
-});
+});       
+    
 
 
+$("#login-btn").on("click", function(){
+    $(location).href("#home");
+    $("#wtf").trigger("click");
+})
 
 $(document).delegate('#my-dialog-button', 'click', function () {
 

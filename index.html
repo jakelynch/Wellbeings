@@ -1,4 +1,6 @@
-
+<!DOCTYPE html>
+<html>
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
@@ -32,11 +34,17 @@
 
 	<!-- To Change Connect Buttons -->
         <script type="text/javascript">
-                $(document).ready(function(){
+        $(document).ready(function(){
                 		
                 		// console.log(idlist);
                         
-        	var myid =0;})
+        	var myid =0;
+        });
+		$( document ).delegate("#home", "pageinit", function() {
+		  $("#myPopup").popup(); //vip popup
+		  $("#wtf").trigger("click"); //openvipPopup is the id of the anchor for popup
+		});
+
         </script>
 </head>
 <body>
@@ -58,9 +66,8 @@
 </div><!-- /LOGIN PAGE -->
 
 
-
 <!-- HOME PAGE THREAD (1/2): NEARBY FEED -->
-<div data-role="page" id ="home">
+<div data-role="page" id="home">
 	<script>
 		var id = 0;
 		function setid(idnum){
@@ -69,6 +76,19 @@
 			return id
 		}
 	</script>
+
+	<div data-role="popup" id="myPopup" data-overlay-theme="a" class="ui-content-onboard">
+	    <div id="center">
+	    	<br>
+	    	Welcome to Well-Beings!
+	    	<br><br><br><br><br><br>
+	    	Well-Beings is a Peer Support Platform, where you can learn from others and learn by helping others. 
+		</div>
+    </div>
+
+	<a href="#myPopup" id="wtf" data-rel="popup" data-position-to="window"></a>
+
+
 	<!-- HEADER -->
 	<div data-role="header" data-position = "fixed">
 		<div id="logo">
@@ -128,10 +148,7 @@
 		function testFunc(){
 			var x = document.getElementById("frm0");
 
-
-
 			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
-
 
 
 			localStorage.setItem('postsave', $('.reply1').html());
@@ -264,7 +281,7 @@
 				<br>
 
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 			</div>
@@ -295,7 +312,7 @@
 			<div id="center">My girlfriend struggles with an eating disorder and I can't take it anymore. I've tried to be as supportive as possible but she has no drive to address it. The only thing keeping me from ending things is that I feel like I'd be a terrible person for doing that to her... Any suggestions?</p>
 				<br>
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 
@@ -326,7 +343,7 @@
 			<div id="center">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
 				<br>
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 
@@ -356,7 +373,7 @@
 			<div id="center">My boyfriend and I are about to get kicked out of our place and with our current situation it looks like we'll have nowhere to go. I know it will only be temporary but we're not sure what to do in the meantime... any advice would be greatly appreciated.</p>
 				<br>
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 
@@ -440,11 +457,56 @@
 				</form>
 
 				<ul data-role="listview" data-filter="true" data-input="#filterBasic-input">
-				    <li>Depression</li>
-				    <li>Worry</li>
-				    <li>Study</li>
-				    <li>Fate</li>
-				    <li>Relationship</li>
+
+				    <li>			
+						<h4><p> &nbsp;&nbsp; Anna - Homelessness</p></h4>
+						<br>
+						<div id="center">My boyfriend and I are about to get kicked out of our place and with our current situation it looks like we'll have nowhere to go. I know it will only be temporary but we're not sure what to do in the meantime... any advice would be greatly appreciated.</p>
+							<br>
+							<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+							<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
+							<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
+						</div>
+					</li>
+
+				    <li>Study
+						<h4><p> &nbsp;&nbsp; Peter - Dating</p></h4>
+						<br>
+						<div id="center">My girlfriend struggles with an eating disorder and I can't take it anymore. I've tried to be as supportive as possible but she has no drive to address it. The only thing keeping me from ending things is that I feel like I'd be a terrible person for doing that to her... Any suggestions?</p>
+							<br>
+							<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+							<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
+							<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+						</div>
+					</li>
+
+				    <li>
+						<h4><p> &nbsp;&nbsp; Emily C. - Dating</p></h4>
+						<br>
+						<div id="center">3 years with my boyfriend but recently we've felt distant. I think I love him and I know the fire won't always be there but when should you consider ending a relationship just for lack of connection?</p>
+							<br>
+							<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+							<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
+							<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+						</div>
+					</li>
+
+				    <li>
+						<h4><p> &nbsp;&nbsp; Aaron - Work</p></h4>
+						<br>
+						<div id="center">Contractor at a biotech company, 2 other contractors with less experience were offered full time jobs and I wasn't even considered for an interview.</p>
+							<br>
+							<p>I'm not even saying it's unfair... but how do I rationalize it? How do I keep going?</p>
+							<br>
+
+							<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+							<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
+							<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+						</div>
+					</li>
 				</ul>
 			</div>    	
 	    </div>
@@ -481,11 +543,6 @@
 	<!-- MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel2" data-position="right" data-display="overlay">
 	    <ul>
-            <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
-            	<p>Connections</p>
-            </li>
-            
             <li class = "ui-btn">
             	<img src="img/surf.png" width = "50" height = "50">
                 <div data-role="collapsible">
@@ -634,11 +691,6 @@
     <!-- [panel] MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel3" data-position="right" data-display="overlay">
 	    <ul>
-            <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
-            	<p>Connections</p>
-            </li>
-            
             <li class = "ui-btn">
             	<img src="img/surf.png" width = "50" height = "50">
                 <div data-role="collapsible">
@@ -697,8 +749,6 @@
                 </div>
         </div>
 </div>
-
-
 
 
 
@@ -1105,6 +1155,8 @@
 
 </div>
 <!-- Temp Search Result -->
+
+
 
 </body>
 </html>
