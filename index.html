@@ -49,6 +49,12 @@
                         })
                 });
         var myid =0
+
+		$( document ).delegate("#home", "pageinit", function() {
+		  $("#myPopup").popup(); //vip popup
+		  $("#wtf").trigger("click"); //openvipPopup is the id of the anchor for popup
+		});
+
         </script>
 </head>
 <body>
@@ -70,9 +76,8 @@
 </div><!-- /LOGIN PAGE -->
 
 
-
 <!-- HOME PAGE THREAD (1/2): NEARBY FEED -->
-<div data-role="page" id ="home">
+<div data-role="page" id="home">
 	<script>
 		var id = 0;
 		function setid(idnum){
@@ -81,6 +86,19 @@
 			return id
 		}
 	</script>
+
+	<div data-role="popup" id="myPopup" data-overlay-theme="a" class="ui-content-onboard">
+	    <div id="center">
+	    	<br>
+	    	Welcome to Well-Beings!
+	    	<br><br><br><br><br><br>
+	    	Well-Beings is a Peer Support Platform, where you can learn from others and learn by helping others. 
+		</div>
+    </div>
+
+	<a href="#myPopup" id="wtf" data-rel="popup" data-position-to="window"></a>
+
+
 	<!-- HEADER -->
 	<div data-role="header" data-position = "fixed">
 		<div id="logo">
@@ -139,8 +157,6 @@
 		<script type="text/javascript">
 		function testFunc(){
 			var x = document.getElementById("frm0");
-
-
 
 			$("#aroundyou").prepend('<div class="reply129" id = "129129391"><br><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value+' </p></h4><br><div id="center"> '+ x.elements[1].value +	' <br><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div></div>')
 
@@ -274,7 +290,7 @@
 				<br>
 
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 			</div>
@@ -305,7 +321,7 @@
 			<div id="center">My girlfriend struggles with an eating disorder and I can't take it anymore. I've tried to be as supportive as possible but she has no drive to address it. The only thing keeping me from ending things is that I feel like I'd be a terrible person for doing that to her... Any suggestions?</p>
 				<br>
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 
@@ -336,7 +352,7 @@
 			<div id="center">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
 				<br>
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 
@@ -366,7 +382,7 @@
 			<div id="center">My boyfriend and I are about to get kicked out of our place and with our current situation it looks like we'll have nowhere to go. I know it will only be temporary but we're not sure what to do in the meantime... any advice would be greatly appreciated.</p>
 				<br>
 				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
-				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 
@@ -484,11 +500,6 @@
 	<!-- MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel2" data-position="right" data-display="overlay">
 	    <ul>
-            <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
-            	<p>Connections</p>
-            </li>
-            
             <li class = "ui-btn">
             	<img src="img/surf.png" width = "50" height = "50">
                 <div data-role="collapsible">
@@ -637,11 +648,6 @@
     <!-- [panel] MENU -->
 	<div class="ui-menu" data-role="panel" id="mypanel3" data-position="right" data-display="overlay">
 	    <ul>
-            <li class="ui-btn">
-            	<img src="img/connections.png" width="50" height="50">
-            	<p>Connections</p>
-            </li>
-            
             <li class = "ui-btn">
             	<img src="img/surf.png" width = "50" height = "50">
                 <div data-role="collapsible">

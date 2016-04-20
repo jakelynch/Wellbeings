@@ -11,17 +11,22 @@ $(document).ready(function() {
 		$('#reply1').html(htmlstore);
 
 	}
+
     if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
         $('#aroundyou').prepend(postsave)};
+
     $(".reply").click(function(){
-    alert(this.id);
-    myid = this.id;
-});       
+        alert(this.id);
+        myid = this.id;
+    });       
     
 });
 
-
+$("#login-btn").on("click", function(){
+    $(location).href("#home");
+    $("#wtf").trigger("click");
+})
 
 $(document).delegate('#my-dialog-button', 'click', function () {
 
