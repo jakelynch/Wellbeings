@@ -14,12 +14,20 @@ $(document).ready(function() {
 
     if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
+<<<<<<< HEAD
         $('#aroundyou').prepend(postsave)};
 
     $(".reply").click(function(){
         alert(this.id);
         myid = this.id;
     });       
+=======
+        $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>")};
+    $(".reply").click(function(){
+    // alert(this.id);
+    myid = this.id;
+});       
+>>>>>>> ed944271de91370cc636369793a19495c8880317
     
 });
 
