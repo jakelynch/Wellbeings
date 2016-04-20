@@ -9,16 +9,53 @@ $(document).ready(function() {
 	if (localStorage.getItem('htmlsave')){
 		var htmlstore = localStorage.getItem('htmlsave')
 		$('#reply1').html(htmlstore);
-
 	}
+    if (localStorage.getItem('idlistsave')){
+        var idlist = localStorage.getItem("idlistsave")
+        
+        idlist= idlist.substring(2,idlist.length-2).split('","');
+
+        console.log(idlist);
+        for (i = 0; i < idlist.length; i++){
+            idtag = "#" +idlist[i]
+            $(idtag + " .connect-btn").removeClass('noConnect').addClass('yesConnect');
+        }
+    }
+    else{
+        var idlist = [];
+    }
     if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
         $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>")};
     $(".reply").click(function(){
     // alert(this.id);
     myid = this.id;
-});       
-    
+    })  
+ 
+    $('.connect-btn').on('click', function(){
+                                var btn=$(this);
+                                console.log(btn.parent().parent().attr('id'));
+                                if(btn.hasClass('noConnect')){
+                                        btn.removeClass('noConnect').addClass('yesConnect');
+                                        console.log("noConnect");
+                                        console.log(idlist)
+                                        idlist.push(btn.parent().parent().attr('id'));
+                                        localStorage.setItem('idlistsave', JSON.stringify(idlist));
+
+                                }
+
+                                else{
+                                        btn.removeClass('yesConnect').addClass('noConnect');
+                                        console.log("yesConnect");
+                                        var index = idlist.indexOf(console.log(btn.parent().parent().attr('id')));
+                                        if (index> -1){
+                                            idlist = idlist.splice(index, 1)
+                                        }
+                                        localStorage.setItem('idlistsave', JSON.stringify(idlist));
+
+                                }
+                                console.log("this is" + idlist);
+                        });
 });
 
 
