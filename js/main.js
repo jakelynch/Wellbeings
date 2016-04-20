@@ -13,9 +13,9 @@ $(document).ready(function() {
 	}
     if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
-        $('#aroundyou').prepend(postsave)};
+        $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>")};
     $(".reply").click(function(){
-    alert(this.id);
+    // alert(this.id);
     myid = this.id;
 });       
     
