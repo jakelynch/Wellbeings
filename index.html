@@ -35,17 +35,24 @@
         <script type="text/javascript">
 
                 $(document).ready(function(){
-                        $('.connect-btn').on('click', function(){
-                                var btn=$(this);
-                                console.log(btn.attr('class'));
-                                if(btn.hasClass('noConnect')){
-                                        btn.removeClass('noConnect').addClass('yesConnect');
-                                        console.log("noConnect");
-                                }
-                                else{
-                                        btn.removeClass('yesConnect').addClass('noConnect');
-                                        console.log("yesConnect");
-                                }
+                    $('.connect-btn').on('click', function()
+                    {
+                        var btn=$(this);
+                        previousConClass = localStorage['noConnectClass'];
+						if (previousConClass) $('noConnect').addClass(previousConClass);
+                        
+                        //console.log(btn.attr('class'));
+
+                            if(btn.hasClass('noConnect'))
+                            {
+                            	btn.removeClass('noConnect').addClass('yesConnect');
+                                console.log("noConnect");
+                                localStorage['noConnect'] = 'yesConnect';
+                            }
+                            else{
+                                btn.removeClass('yesConnect').addClass('noConnect');
+                                console.log("yesConnect");
+                            }
                         })
                 });
 
@@ -324,6 +331,8 @@
                 })
             });
         </script>	
+		<hr width="95%" align="center">
+        <p id="emptynotification"> <br>Press 'Connect' in AroundYou build Connections! <br></p>
 
 		<!-- <div class="reply">
 			<br>
