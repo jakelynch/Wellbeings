@@ -447,7 +447,7 @@
 				    	<!-- <input id = "filterBasic-input" data-type = "search"> -->
 				  	<!-- </div>				   -->
 				  <a href="#" data-inline = "true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
-				  <input type="submit" data-inline="true" value="Submit" data-icon = "search">
+				  <input type="submit" data-inline="true" value="Submit" data-icon = "search" onclick="location.href='SearchResult.html';" >
 				</form>
 
 				<ul data-role="listview" data-filter="true" data-input="#filterBasic-input">
@@ -710,6 +710,412 @@
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Temp Search Result -->
+<div data-role="page" id ="SearchResult">
+	<script>
+		var id = 0;
+		function setid(idnum){
+			id=idnum
+			alert(id);
+			return id
+		}
+	</script>
+	<!-- HEADER -->
+	<div data-role="header" data-position = "fixed">
+		<div id="logo">
+			<img src="img/Logo.png" id="logo_img" text-align="center">
+			<p id="logo_sub">Socially Sincere Support</p>
+			<br>
+		</div>
+
+		<div data-role="navbar">
+
+		<ul>
+			<li> <a href="#" data-icon="carat-l" data-rel="back">Back</a></li>
+			<li> <a href="#profile" data-icon="user">Profile</a></li>
+			<li> <a href="#mypanel" data-icon="bars">Menus</a></li>
+		</ul>
+
+		</div>
+	</div><!-- /HEADER -->
+	
+	<!-- [panel] MENU -->
+	<div class="ui-menu" data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+	    <ul>
+            <li class = "ui-btn">
+            	<img src="img/surf.png" width = "50" height = "50">
+                <div data-role="collapsible">
+	                	
+					    <h5>Categories</h5>
+				    	<p class="ui-btn">Relationship</p>
+				    	<p class="ui-btn">School</p>
+				    	<p class="ui-btn">Family</p>
+				    	<p class="ui-btn">Homework</p>
+				    	<p class="ui-btn">SAT</p>
+				    	<p class="ui-btn">Depression</p>
+				</div>
+            </li>
+            <li class="ui-btn" ><img src="img/settings.ico" width="30" height="30">  Settings</li>
+            <li><a class="ui-btn" href="#login"><img src = "img/logout.png" width = "30" height = "30">  Logout </a></li>
+            <li><a class="ui-btn" href="#popupBug" data-rel="popup" data-position-to="window" data-inline="true" data-theme="a" data-transition="pop"><img src = "img/bugReport.png" width = "30" height = "30"> Report Bug</a></li>
+        </ul>
+	</div><!-- /MENU -->
+
+	<!-- [popup] NEWPOST -->
+	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+	    <form id="frm0" action="#home">
+	        <div style="padding:10px 20px;">
+	            <h3>What do you need help with?</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Category" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
+	            
+	            <button value="Submit" data-icon="edit" onClick=testFunc();>Submit</button>
+	        </div>
+	    </form>
+		<script type="text/javascript">
+		function testFunc(){
+			var x = document.getElementById("frm0");
+
+
+
+			$("#aroundyou").prepend('<div class="reply129" id = "129129391"><br><h4 width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value+' </p></h4><br><div id="center"> '+ x.elements[1].value +	' <br><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="center-button" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a></div></div>')
+
+
+			localStorage.setItem('postsave', $('.reply129').html());
+		}
+		</script>
+	</div><!-- /NEWPOST -->
+
+	<!-- [popup] COMMENT -->
+	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
+		
+	    <form id="frm1" action="#home">
+	        <div style="padding:10px 20px;">
+	            <h3>How can you help?</h3>
+	            <label for="reply" class="ui-hidden-accessible">Password:</label>
+				<input type="text" id="reply" placeholder="Post to connect">
+	            <button type="reply" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+
+	        </div>
+	    </form>
+
+		<script type="text/javascript">
+		function testFunction(){
+			var x = document.getElementById("frm1");
+			console.log(x.elements[0].value);
+			console.log("hi");
+			alert("error");
+				
+			$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
+			localStorage.setItem('htmlsave', $('#reply').html());
+		}
+		</script>
+	</div><!-- /COMMENT -->
+
+	<!-- [popup] BUG -->
+	<div data-role="popup" id="popupBug" data-theme="a" class="ui-corner-all">
+	    <form>
+	        <div style="padding:10px 20px;">
+	            <h3>Sorry about that...</h3>
+	            <label for="un" class="ui-hidden-accessible">Username:</label>
+	            <input type="text" name="user" id="un" value="" placeholder="Location" data-theme="a">
+	            <label for="textarea-1"></label>
+				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Please describe the bug"></textarea>
+	            
+	            <button type="submit" data-theme="b" data-icon="edit">Post</button>
+	        </div>
+	    </form>
+	</div><!-- /BUG -->
+
+	<!-- Connection Feed NAV for Threads -->
+	<div data-role="navbar">
+		<ul>
+				<li><button class="ui-btn" id="feed">Around You</button></li>
+				<li><button class="ui-btn" id="connectionsbtn">Connections</button></li>
+		</ul>
+	</div><!-- Connection Feed NAV for Threads -->
+
+
+	<!-- AROUND YOU -->
+	<div class="page" id="aroundyou">
+
+		<div class="reply" id="1">
+			<br>
+			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Aaron - Work</p></h4>
+			<br>
+			<div id="center">Contractor at a biotech company, 2 other contractors with less experience were offered full time jobs and I wasn't even considered for an interview.</p>
+				<br>
+				<p>I'm not even saying it's unfair... but how do I rationalize it? How do I keep going?</p>
+				<br>
+
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
+				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
+			</div>
+
+            <div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply1">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="reply" id="2">
+			<br>
+			<hr width="95%" align="center">
+			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Emily C. - Dating</p></h4>
+			<br>
+			<div id="center">3 years with my boyfriend but recently we've felt distant. I think I love him and I know the fire won't always be there but when should you consider ending a relationship just for lack of connection?</p>
+				<br>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
+				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+			</div>
+			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply2">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="reply" id="3">
+			<br>
+			<hr width="95%" align="center">
+			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Anonymous - Depressed</p></h4>
+			<br>
+			<div id="center"> <p>I've always had a sort of nagging case of mild depression. Every now and then for seemingly no reason I'll lack the motivation to do even the littlest things like brushing my teeth. I'm not actually sad about anything and I don't want to start taking meds - has anyone out there been able to overcome something like this?</p>
+				<br>
+
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
+				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+			</div>
+			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply3">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+
+		<div class="reply" id="4">
+			<br>
+			<hr width="95%" align="center">
+			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Peter - Dating</p></h4>
+			<br>
+			<div id="center">My girlfriend struggles with an eating disorder and I can't take it anymore. I've tried to be as supportive as possible but she has no drive to address it. The only thing keeping me from ending things is that I feel like I'd be a terrible person for doing that to her... Any suggestions?</p>
+				<br>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
+				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
+			</div>
+			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply4">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="reply" id="4a">
+			<br>
+			<hr width="95%" align="center">
+			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Lauren - Failed Exam</p></h4>
+			<br>
+			<div id="center">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
+				<br>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
+				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
+			</div>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply4a">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="reply" id="5">
+			<br>
+			<hr width="95%" align="center">
+			<a href="#user" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a>
+			<h4><p> &nbsp;&nbsp; Anna - Homelessness</p></h4>
+			<br>
+			<div id="center">My boyfriend and I are about to get kicked out of our place and with our current situation it looks like we'll have nowhere to go. I know it will only be temporary but we're not sure what to do in the meantime... any advice would be greatly appreciated.</p>
+				<br>
+				<a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-icon="check" data-theme="a" data-transition="pop">Reply</a>
+
+				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
+
+			</div>
+			<br>
+			<div data-role="content">
+                <div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a">
+                	<h5>Replies</h5>
+                	<div id="reply5">
+						<table border="1" style="width:100%">
+							<tr>
+								<td>
+									test
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		
+	</div><!-- /AROUNDYOU -->
+
+	<!--Home: Connection Feed Thread-->
+	<div class="page" id="connections">
+
+		
+
+
+		<script type="text/javascript">
+
+            $(document).ready(function(){
+            	$("#connectionsbtn").on("click", function(){
+                    $(".noConnect").parent().parent().hide();
+                });
+
+                $("#feed").on("click", function(){
+                	$(".noConnect").parent().parent().show();
+                })
+            });
+        </script>	
+
+
+
+	</div><!-- /Home - Connections Feed Thread -->
+
+
+	<!-- FOOTER -->
+	<div data-role ="footer">
+		<div data-role="navbar">
+			<ul>
+				<li> <a href= "#myPopupDialog" data-icon="search" data-rel = "popup">Search</a></li>				
+				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
+				<li> <a href="#popupLogin" data-icon = "edit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Post</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /FOOTER -->
+
+<!--     <div data-role="popup" id="myPopup" class="ui-content" data-theme = "b" data-overlay-theme = "b">
+    	<p>Pop Up</p>
+    </div>	 -->
+    
+    <div data-role="popup" id="myPopupDialog" class="ui-content" data-theme = "a" data-overlay-theme = "b" data-transition="slidedown" data-position-to="window">
+	    <div data-role="search" class="ui-content">
+	    	<h2>Search</h2>
+	    	<p>Topic, Posts, Users...</p>
+			
+			<div data-role="search" class="ui-content">
+				<form method="post" action="demoform.asp" class="ui-filterable">
+				<!-- <form  class="ui-filterable"> -->
+				  	<!-- <div class="ui-field-contain"> -->
+				    	<input type="search" name="search" id="filterBasic-input" placeholder="i.e. I need help for..." data-type = "search">
+				    	<!-- <input id = "filterBasic-input" data-type = "search"> -->
+				  	<!-- </div>				   -->
+				  <a href="#" data-inline = "true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+				  <input type="submit" data-inline="true" value="Submit" data-icon = "search">
+				</form>
+
+				<ul data-role="listview" data-filter="true" data-input="#filterBasic-input">
+				    <li>Depression</li>
+				    <li>Worry</li>
+				    <li>Study</li>
+				    <li>Fate</li>
+				    <li>Relationship</li>
+				</ul>
+			</div>    	
+	    </div>
+    </div>    
+
+
+
+
+</div>
+<!-- Temp Search Result -->
 
 </body>
 </html>
