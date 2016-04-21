@@ -48,9 +48,10 @@ if (localStorage.getItem('postsave')){
                                 else{
                                         btn.removeClass('yesConnect').addClass('noConnect');
                                         console.log("yesConnect");
-                                        var index = idlist.indexOf(console.log(btn.parent().parent().attr('id')));
+                                        var index = idlist.indexOf(btn.parent().parent().attr('id'));
+                                        console.log(index);
                                         if (index> -1){
-                                            idlist = idlist.splice(index, 1)
+                                            idlist.splice(index, 1)
                                         }
                                         localStorage.setItem('idlistsave', JSON.stringify(idlist));
 
