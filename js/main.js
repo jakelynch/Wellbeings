@@ -61,8 +61,8 @@ if (localStorage.getItem('postsave')){
     
 
 
-$("#login-btn").on("click", function(){
-    $(location).href("#home");
+$(document).delegate("#login-btn", "click", function(){
+    window.location.href = "http://localhost:8888/#home";
     $("#wtf").trigger("click");
 })
 
