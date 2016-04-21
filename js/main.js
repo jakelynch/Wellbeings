@@ -58,13 +58,7 @@ if (localStorage.getItem('postsave')){
                                 console.log("this is" + idlist);
                         });
 });       
-    
 
-
-$(document).delegate("#login-btn", "click", function(){
-    window.location.href = "http://localhost:8888/#home";
-    $("#wtf").trigger("click");
-})
 
 $(document).delegate('#my-dialog-button', 'click', function () {
 
