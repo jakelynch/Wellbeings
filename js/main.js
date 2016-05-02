@@ -72,6 +72,15 @@ $(document).delegate('#my-dialog-button', 'click', function () {
     });
 });
 
+$(document).delegate('.heart-btn', 'click', function () {
+    if ($(this).css("background-color") != "rgb(255, 0, 0)") {
+        $(this).css("background-color","red");
+    }
+    else {
+        $(this).css("background-color","rgb(237, 237, 237)");
+    }
+});
+
 function showpage(id){
     $(".page").hide();
     $(id).show();
