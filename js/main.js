@@ -27,7 +27,9 @@ $(document).ready(function() {
 if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
 
-        $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>")};
+        $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>");
+        $('#userposts').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>");}
+
     $(".reply").click(function(){
     // alert(this.id);
     myid = this.id;
