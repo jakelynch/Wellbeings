@@ -24,7 +24,7 @@ $(document).ready(function() {
     else{
         var idlist = [];
     }
-if (localStorage.getItem('postsave')){
+    if (localStorage.getItem('postsave')){
         var postsave = localStorage.getItem('postsave')
 
         $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>");

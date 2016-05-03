@@ -152,18 +152,15 @@
 	            <label for="textarea-1"></label>
 				<textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="Post to connect"></textarea>
 	            
-	            <button value="Submit" data-icon="edit" onClick='testFunc();location.reload();'>Submit</button>
+	            <button value="Submit" data-icon="edit" onClick='testFunc(); location.reload();'>Submit</button>
 	        </div>
 	    </form>
 		<script type="text/javascript">
 		function testFunc(){
-			console.log("hello");
 			var x = document.getElementById("frm0");
-			console.log("hello");
-			$("#aroundyou").prepend('<div class="reply reply1 ' + x.elements[1].value+'" id = "129129391 test"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
-			localStorage.setItem('Category', 'test');
+			$("#aroundyou").prepend('<div class="reply reply1 ' + x.elements[1].value+'" id = "129129391 test"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
+			// localStorage.setItem('Category', 'test');
 			localStorage.setItem('postsave', $('.reply1').html());
-
 			location.href="#home";	
 		}
 		</script>
@@ -440,7 +437,7 @@
 	<div data-role ="footer">
 		<div data-role="navbar">
 			<ul>
-				<li> <a href= "#myPopupDialog" data-icon="search" data-rel = "popup">Search</a></li>				
+				<li> <a href= "#ProfileSearch2" data-icon="search" data-rel = "popup">Search</a></li>				
 				<li> <a onclick=showpage("#aroundyou") data-icon="home">Home</a></li>
 	            <li> <a href="#mypanel" data-icon="bars">Menus</a></li>
 
