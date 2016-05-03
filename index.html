@@ -231,7 +231,7 @@
 				<p>I'm not even saying it's unfair... but how do I rationalize it? How do I keep going?</p>
 				<br>
 
-				<a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-theme="c">Connect</a>
 			</div>
@@ -259,7 +259,7 @@
 			<br>
 			<div id="center">3 years with my boyfriend but recently we've felt distant. I think I love him and I know the fire won't always be there but when should you consider ending a relationship just for lack of connection?
 				<br>
-				<a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
 			</div>
@@ -285,7 +285,7 @@
 			<div id="center"> <p>I've always had a sort of nagging case of mild depression. Every now and then for seemingly no reason I'll lack the motivation to do even the littlest things like brushing my teeth. I'm not actually sad about anything and I don't want to start taking meds - has anyone out there been able to overcome something like this?</p>
 				<br>
 
-				<a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
@@ -312,7 +312,7 @@
 			<br>
 			<div id="center">My girlfriend struggles with an eating disorder and I can't take it anymore. I've tried to be as supportive as possible but she has no drive to address it. The only thing keeping me from ending things is that I feel like I'd be a terrible person for doing that to her... Any suggestions?</p>
 				<br>
-				<a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
@@ -341,7 +341,7 @@
 			<br>
 			<div id="center">Found out I failed a final exam for a class that I need to pass to graduate.  I may have to pay another semester of tuition to retake, and already paying crazy loans.  How am I going to get through this? </p>
 				<br>
-				<a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
@@ -368,7 +368,7 @@
 			<br>
 			<div id="center">My boyfriend and I are about to get kicked out of our place and with our current situation it looks like we'll have nowhere to go. I know it will only be temporary but we're not sure what to do in the meantime... any advice would be greatly appreciated.</p>
 				<br>
-				<a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
+				<a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a>
 				<a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a>
 
 				<a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true" data-mini-theme="c">Connect</a>
@@ -398,18 +398,19 @@
 
 
 		<script type="text/javascript">
+		$(document).delegate('#connectionsbtn', 'click', function () {
 
-            $(document).ready(function(){
-            	$("#connectionsbtn").on("click", function(){
-                    $(".noConnect").parent().parent().hide();
-                });
+            // $(document).ready(function(){
+            // 	$("#connectionsbtn").on("click", function(){
+            $(".noConnect").parent().parent().hide();
+        });
 
-                $("#feed").on("click", function(){
-                	$(".noConnect").parent().parent().show();
-                })
-            });
-
+        $(document).delegate('#feed', 'click', function () {
+                // $("#feed").on("click", function(){
+        	$(".noConnect").parent().parent().show();
+        });
         </script>	
+
 		<hr width="95%" align="center">
         <p id="emptynotification"> <br>Press 'Connect' in AroundYou to build Connections! <br></p>
 
@@ -560,7 +561,7 @@
 		function testFunc(){
 			var x = document.getElementById("frm0");
 
-			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
+			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a class="heart-btn" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
 
 
 			localStorage.setItem('postsave', $('.reply1').html());
@@ -952,22 +953,7 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Temp Search Result -->
-
-
 
 </body>
 </html>
