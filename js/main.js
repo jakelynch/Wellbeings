@@ -3,7 +3,7 @@ var html;
 
 
 $(document).ready(function() {
-    // localStorage.clear();
+    //localStorage.clear();
 
     var id=0;
 	if (localStorage.getItem('htmlsave')){
@@ -24,7 +24,9 @@ $(document).ready(function() {
     else{
         var idlist = [];
     }
+
     if (localStorage.getItem('postsave')){
+
         var postsave = localStorage.getItem('postsave')
 
         $('#aroundyou').prepend("<div class='reply' id ='129129391'>"+ postsave+"</div>");
@@ -33,35 +35,48 @@ $(document).ready(function() {
     $(".reply").click(function(){
     // alert(this.id);
     myid = this.id;
-    })  
- 
+    });  
+    $(".heart-btn").on("click", function(){
+            var btn = $(this);
+            if(btn.hasClass('noRed')){
+                btn.removeClass('noRead').addClass('yesRed');
+            }
+                })
     $('.connect-btn').on('click', function(){
-                                var btn=$(this);
-                                console.log(btn.parent().parent().attr('id'));
-                                if(btn.hasClass('noConnect')){
-                                        btn.removeClass('noConnect').addClass('yesConnect');
-                                        console.log("noConnect");
-                                        console.log(idlist)
-                                        idlist.push(btn.parent().parent().attr('id'));
-                                        localStorage.setItem('idlistsave', JSON.stringify(idlist));
+        var btn=$(this);
+        console.log(btn.parent().parent().attr('id'));
+        if(btn.hasClass('noConnect')){
+                btn.removeClass('noConnect').addClass('yesConnect');
+                console.log("noConnect");
+                console.log(idlist)
+                idlist.push(btn.parent().parent().attr('id'));
+                localStorage.setItem('idlistsave', JSON.stringify(idlist));
 
-                                }
+        }
 
-                                else{
-                                        btn.removeClass('yesConnect').addClass('noConnect');
-                                        console.log("yesConnect");
-                                        var index = idlist.indexOf(btn.parent().parent().attr('id'));
-                                        console.log(index);
-                                        if (index> -1){
-                                            idlist.splice(index, 1)
-                                        }
-                                        localStorage.setItem('idlistsave', JSON.stringify(idlist));
+        else {
+                btn.removeClass('yesConnect').addClass('noConnect');
+                console.log("yesConnect");
+                var index = idlist.indexOf(btn.parent().parent().attr('id'));
+                console.log(index);
+                if (index> -1){
+                    idlist.splice(index, 1)
+                }
+                localStorage.setItem('idlistsave', JSON.stringify(idlist));
 
-                                }
-                                console.log("this is" + idlist);
-                        });
+        }
+        console.log("this is" + idlist);
+    });
 });       
 
+$(document).delegate('.heart-btn', 'click', function () {
+    if ($(this).css("background-color") != "rgb(255, 0, 0)") {
+    $(this).css("background-color","red");
+    }
+    else {
+    $(this).css("background-color","rgb(237, 237, 237)");
+    }
+});
 
 $(document).delegate('#my-dialog-button', 'click', function () {
 
@@ -70,6 +85,15 @@ $(document).delegate('#my-dialog-button', 'click', function () {
         changeHash : false,
         role       : 'dialog'
     });
+});
+
+$(document).delegate('.heart-btn', 'click', function () {
+    if ($(this).css("background-color") != "rgb(255, 0, 0)") {
+        $(this).css("background-color","red");
+    }
+    else {
+        $(this).css("background-color","rgb(237, 237, 237)");
+    }
 });
 
 function showpage(id){
