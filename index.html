@@ -174,7 +174,7 @@
 	        <div style="padding:10px 20px;">
 	            <h3>How can you help?</h3>
 				<textarea cols="40" rows="8" name="reply-1" id="reply-1" placeholder="Words of wisdom here"></textarea>
-	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();   <button value="Submit" data-icon="edit" onClick='testFunc(); location.reload();'>Submit</button>
 
 	        
 
@@ -188,6 +188,7 @@
 				
 			$("#reply").append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
 			localStorage.setItem('htmlsave', $('#reply').html());
+			location.href="#"
 		}
 		</script>
 	</div><!-- /COMMENT -->
@@ -559,7 +560,7 @@
 		function testFunc(){
 			var x = document.getElementById("frm0");
 
-			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
+			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a class="heart-btn noConnect" href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
 
 
 			localStorage.setItem('postsave', $('.reply1').html());
@@ -569,13 +570,13 @@
 		</script>
 	</div><!-- /NEWPOST -->
 	<!-- [popup] COMMENT -->
-	<div data-role="popup"id="popupComment" data-theme="a" class="ui-corner-all">
+	<div data-role="popup"id="popupCommentprofile" data-theme="a" class="ui-corner-all">
 
 	    <form id="frm1" action="#">
 	        <div style="padding:10px 20px;">
 	            <h3>How can you help?</h3>
 				<textarea cols="40" rows="8" name="reply-1" id="reply-1" placeholder="Words of wisdom here"></textarea>
-	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();>Submit</button>
+	            <button type="submit" value="submit"data-icon="edit" onclick=testFunction();location.reload();>Submit</button>
 
 	        </div>
 	    </form>
@@ -589,6 +590,7 @@
 				$("#reply" +myid).append('<table border="1" style="width:100%"><tbody><tr><td>'+x.elements[0].value+'</td></tr></tbody></table>');
 
 				localStorage.setItem('htmlsave'+myid, $('#reply' +myid).html());
+				location.href="#home"
 			}
 		</script>
 	</div><!-- /COMMENT -->
@@ -810,7 +812,7 @@
 		function testFunc(){
 			var x = document.getElementById("frm0");
 
-			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a href="index.html" class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
+			$("#aroundyou").prepend('<div class="reply reply1" id = "129129391"><br><hr width="95%" align="center"><a href="#profile" class="ui-block-a ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext"></a><h4><p>&nbsp; '+ x.elements[0].value + ' - '+ x.elements[1].value+' </p></h4><br><div id="center"> '+ x.elements[2].value +	' <br><a href="#" data-role="button" data-icon="heart" data-inline="true" data-iconpos="notext"></a><a href="#popupComment" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-transition="pop">Reply</a><a class="connect-btn center-button noConnect" data-role="button" data-inline="true" data-mini="true">Connect</a></div><br><div data-role="content"><div data-role="collapsible" id="replies" data-theme="a" data-content-theme="a"><h5>Replies</h5><div id="reply129129391"></div></div></div></div>')
 
 
 			localStorage.setItem('postsave', $('.reply1').html());
